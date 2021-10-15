@@ -6,6 +6,12 @@
 
 using std::string;
 
+/*
+Clase por Deyan Sanabria Fallas
+Esta clase representa un tiquete, cada tiquete tiene una fecha de creacion
+y codigo que lo identifique. La fecha puede ser posteriormente usada
+para el tiempo aproximado por tipo de ventanilla
+*/
 class Tiquete{   
     private:
         string codigo;

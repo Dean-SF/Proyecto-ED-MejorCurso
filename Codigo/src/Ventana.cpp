@@ -1,4 +1,4 @@
-#include "include/Ventana.h"
+#include "Ventana.h"
 
 Ventana::Ventana()
 {

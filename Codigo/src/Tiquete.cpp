@@ -1,10 +1,13 @@
-#include "include/Tiquete.h"
+#include "Tiquete.h"
 
+// Por Deyan Sanabria Fallas
+// Constructor de la clase
 Tiquete::Tiquete(string codigo) {
-    time(&tiempo_creacion);
+    time(&tiempo_creacion); // tiempo actual
     this->codigo = codigo;
 }
 
+// Setters y getters:
 string Tiquete::getCodigo() {
     return codigo;
 }
