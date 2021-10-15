@@ -16,7 +16,6 @@ class Servicios {
     public:
         Servicios(string descripcion, string id, string nombre,Ventana *ventana);
         Servicios();
-        ~Servicios();
         string getId();
         string getNombre();
         Ventana* getVentana();

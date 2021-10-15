@@ -28,3 +28,60 @@
 	<string.h>
 	"Ventana.h"
 
+1634334511 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+	"Controlador.h"
+
+1634329391 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\controlador.h
+
+1634334536 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
+	"Tiquete.h"
+
+1634334830 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\tiquete.h
+	<iostream>
+	<string.h>
+	<time.h>
+
+1634334496 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+	"Ventana.h"
+
+1634338196 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventana.h
+	<iostream>
+	<string.h>
+	"Tiquete.h"
+	"Ventanilla.h"
+	"List.h"
+	"ArrayList.h"
+	"Queue.h"
+	"LinkedQueue.h"
+
+1634334433 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
+	"Tiquete.h"
+
+1631048044 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\list.h
+
+1631066027 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\arraylist.h
+	"List.h"
+	<iostream>
+	<stdexcept>
+
+1631924436 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\queue.h
+
+1632115130 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
+	"Queue.h"
+	"Node.h"
+	<stdexcept>
+	<iostream>
+
+1631030950 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\node.h
+
+1634337603 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+	"Servicios.h"
+
+1634337667 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\servicios.h
+	<iostream>
+	<string.h>
+	"Ventana.h"
+
+1634338157 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\main.cpp
+	<iostream>
+
