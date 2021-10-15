@@ -5,6 +5,7 @@
 #include "Ventana.h"
 
 using std::string;
+using std::ostream;
 
 class Servicios {
     private:

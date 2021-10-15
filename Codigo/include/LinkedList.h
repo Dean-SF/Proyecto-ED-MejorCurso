@@ -55,7 +55,7 @@ public:
     Elimina el elemento actual
     */
     E remove() {
-        if (size = 0) 
+        if (size = 0)
             throw runtime_error("Error: List is empty");
         if (current == tail)
             throw runtime_error("Error: There is no current element");
@@ -123,7 +123,7 @@ public:
     mueve la posicion actual al siguiente
     */
     void next() {
-        if (current != tail) 
+        if (current != tail)
             current = current->next;
     }
 
@@ -179,20 +179,6 @@ public:
     }
 
     /*
-    metodo print:
-    Imprime la lista
-    */
-    void print() {
-        Node<E> *oldCurrent = current;
-        cout << "[ ";
-        for(goToStart(); !atEnd(); next()) {
-            cout << getElement() << " ";
-        }
-        cout << "]" << endl;
-        current = oldCurrent;
-    }
-
-    /*
     metodo indexOf:
     retorna el indice de un elemento dado, si no existe, retorna -1
     */
@@ -222,12 +208,12 @@ public:
     */
     void extend(List<E> *L) {
         int oldPos = L->getPos();
-        for(L->goToStart(); !L->atEnd(); L->next()) {   // recorre todos los elementos de la lista entrante 
+        for(L->goToStart(); !L->atEnd(); L->next()) {   // recorre todos los elementos de la lista entrante
             this->append(L->getElement());              // y le hace append a cada elemento
         }
         L->goToPos(oldPos);                             // se devuelve la posicion que tenia antes de alterarla
     }
-    
+
     /*
     Metodo extend:
     añada los elementos de una lista entrante al final de la lista
