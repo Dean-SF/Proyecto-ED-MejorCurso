@@ -34,10 +34,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ArrayList.h" />
 		<Unit filename="include/Controlador.h" />
 		<Unit filename="include/LinkedList.h" />
+		<Unit filename="include/LinkedQueue.h" />
 		<Unit filename="include/List.h" />
 		<Unit filename="include/Node.h" />
+		<Unit filename="include/Queue.h" />
 		<Unit filename="include/Servicios.h" />
 		<Unit filename="include/Tiquete.h" />
 		<Unit filename="include/Ventana.h" />

@@ -9,8 +9,6 @@ Servicios::Servicios(string descripcion, string id, string nombre,Ventana *venta
     this->ventana = ventana;
 }
 
-Servicios::~Servicios(){}
-
 string Servicios::getId(){
     return id;
 }
