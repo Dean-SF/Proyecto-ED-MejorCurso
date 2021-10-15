@@ -2,15 +2,15 @@
 1634332938 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
 	<iostream>
 
-1634337779 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+1634340394 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
 	"Servicios.h"
 
-1634337780 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
+1634341140 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
 	<iostream>
 	<string.h>
 	"Ventana.h"
 
-1634338892 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634341165 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
@@ -28,7 +28,7 @@
 1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
 	"Tiquete.h"
 
-1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\list.h
+1634340394 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\list.h
 
 1634338661 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\arraylist.h
 	"List.h"
@@ -48,6 +48,23 @@
 1634336126 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
-1634334370 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+1634339865 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
+
+1634340427 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+	"Controlador.h"
+
+1634340301 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
+	<iostream>
+	<string.h>
+	<time.h>
+	"LinkedList.h"
+	"Ventana.h"
+	"Servicios.h"
+
+1634340427 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
+	"List.h"
+	"Node.h"
+	<iostream>
+	<stdexcept>
 

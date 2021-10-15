@@ -14,8 +14,8 @@ Controlador::~Controlador(){
 
 string Controlador::estadoColas(){
     string texto = "";
-    for(int i = 0; i<ventanas->getSize(); i++){
-        texto += ventanas->getPos(i)->getNombre();
+    for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
+        //texto += ventanas->getElement();
     }
 }
 

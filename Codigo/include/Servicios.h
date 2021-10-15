@@ -21,6 +21,14 @@ class Servicios {
         string getNombre();
         Ventana* getVentana();
 
+        bool operator!=(const Servicios& other){
+            return this->id != other.id;
+        }
+
+        bool operator==(const Servicios& other){
+            return this->id == other.id;
+        }
+
 };
 
 #endif // SERVICIOS_H
