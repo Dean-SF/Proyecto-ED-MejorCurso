@@ -2,15 +2,14 @@
 #define VENTANA_H
 
 
-class Ventana
-{
+class Ventana {
+    private:
     public:
         Ventana();
-        virtual ~Ventana();
+        ~Ventana();
 
-    protected:
 
-    private:
+    
 };
 
 #endif // VENTANA_H

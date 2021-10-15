@@ -2,15 +2,12 @@
 #define CONTROLADOR_H
 
 
-class Controlador
-{
+class Controlador{
+    private:
     public:
         Controlador();
         ~Controlador();
-
-    protected:
-
-    private:
+    
 };
 
 #endif // CONTROLADOR_H

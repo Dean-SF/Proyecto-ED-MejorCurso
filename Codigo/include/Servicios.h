@@ -2,15 +2,12 @@
 #define SERVICIOS_H
 
 
-class Servicios
-{
+class Servicios {
+    private:
     public:
         Servicios();
-        virtual ~Servicios();
+        ~Servicios();
 
-    protected:
-
-    private:
 };
 
 #endif // SERVICIOS_H
