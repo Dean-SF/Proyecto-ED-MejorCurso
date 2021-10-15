@@ -1,4 +1,4 @@
-#include "Tiquete.h"
+#include "include/Tiquete.h"
 
 Tiquete::Tiquete()
 {

@@ -6,7 +6,7 @@ class Controlador
 {
     public:
         Controlador();
-        virtual ~Controlador();
+        ~Controlador();
 
     protected:
 
