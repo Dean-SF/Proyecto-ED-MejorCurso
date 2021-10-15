@@ -1,4 +1,4 @@
-#include "include/Tiquete.h"
+#include "Tiquete.h"
 
 Tiquete::Tiquete(string codigo) {
     time(&tiempo_creacion);

@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1634332938 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
+	<iostream>
+
+1634334356 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
+	"Tiquete.h"
+
+1634332938 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\tiquete.h
+	<iostream>
+	<string.h>
+	<time.h>
+
+1634334360 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+	"Controlador.h"
+
+1634332938 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
+
+1634334370 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+	"Ventana.h"
+
+1634332938 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+
+1634334365 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+	"Servicios.h"
+
+1634334465 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
+	<iostream>
+	<string.h>
+	"Ventana.h"
+
