@@ -68,3 +68,72 @@
 	<iostream>
 	<stdexcept>
 
+1634338157 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\main.cpp
+	<iostream>
+
+1634417006 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+	"Controlador.h"
+
+1634417006 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\controlador.h
+	<iostream>
+	<string.h>
+	<time.h>
+	"LinkedList.h"
+	"Ventana.h"
+	"Servicios.h"
+
+1634417006 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
+	"List.h"
+	"Node.h"
+	<iostream>
+	<stdexcept>
+
+1634339742 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\list.h
+
+1631030950 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\node.h
+
+1634418806 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventana.h
+	<iostream>
+	<string.h>
+	"Tiquete.h"
+	"Ventanilla.h"
+	"List.h"
+	"ArrayList.h"
+	"Queue.h"
+	"LinkedQueue.h"
+
+1634418381 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\tiquete.h
+	<iostream>
+	<string.h>
+	<time.h>
+
+1634343664 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
+	"Tiquete.h"
+
+1631066027 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\arraylist.h
+	"List.h"
+	<iostream>
+	<stdexcept>
+
+1634418381 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\queue.h
+
+1634418381 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
+	"Queue.h"
+	"Node.h"
+	<stdexcept>
+	<iostream>
+
+1634417006 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\servicios.h
+	<iostream>
+	<string.h>
+	"Ventana.h"
+
+1634339707 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+	"Servicios.h"
+
+1634418381 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
+	"Tiquete.h"
+
+1634418553 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+	"Ventana.h"
+
