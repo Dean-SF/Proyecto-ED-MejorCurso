@@ -10,7 +10,7 @@
 	<string.h>
 	"Ventana.h"
 
-1634341190 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634417425 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
@@ -20,12 +20,12 @@
 	"Queue.h"
 	"LinkedQueue.h"
 
-1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\tiquete.h
+1634417680 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\tiquete.h
 	<iostream>
 	<string.h>
 	<time.h>
 
-1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
+1634417236 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
 	"Tiquete.h"
 
 1634340394 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\list.h
@@ -35,9 +35,9 @@
 	<iostream>
 	<stdexcept>
 
-1634338661 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\queue.h
+1634418305 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\queue.h
 
-1634338661 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
+1634418209 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
 	"Queue.h"
 	"Node.h"
 	<stdexcept>
@@ -45,16 +45,16 @@
 
 1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\node.h
 
-1634336126 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
+1634418209 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
 1634339865 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634340427 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+1634342629 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
 	"Controlador.h"
 
-1634340301 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
+1634342629 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
 	<iostream>
 	<string.h>
 	<time.h>

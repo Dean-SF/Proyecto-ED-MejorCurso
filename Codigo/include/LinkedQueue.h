@@ -16,7 +16,7 @@ private:
     int size;
 
     void checkIfEmpty() {
-        if(front == rear) 
+        if(front == rear)
             throw runtime_error("Queue is Empty");
     }
 
@@ -33,7 +33,7 @@ public:
         clear();
         delete front;
     }
-    
+
     /*
     Metodo enqueue: Agrega un elemento a la cola
     */
@@ -76,7 +76,7 @@ public:
         }
         rear = front;
         size = 0;
-        
+
     }
 
     /*
@@ -85,7 +85,7 @@ public:
     bool isEmpty() {
         return size == 0;
     }
-    
+
     /*
     Metodo getSize: retorna el tamaño de la cola
     */
@@ -129,7 +129,7 @@ public:
     /*
     Metodo print: Imprime los elementos de la cola
     */
-    void print() {
+    /*void print() {
         Node<E> *current = front;
         cout << "[ ";
         while (current->next != nullptr) {
@@ -140,8 +140,8 @@ public:
             cout << ", ";
         }
         cout << " ]" << endl;
-        
-    }
+
+    }*/
 
 
 };

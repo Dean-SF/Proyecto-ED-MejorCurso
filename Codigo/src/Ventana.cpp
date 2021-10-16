@@ -9,6 +9,8 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     ventanillas = new ArrayList<Ventanilla>(cantidad);
 }
 
+Ventana::Ventana(){}
+
 Ventana::~Ventana() {
     delete colaRegular;
     delete colaPrioritaria;

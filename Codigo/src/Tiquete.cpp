@@ -7,6 +7,8 @@ Tiquete::Tiquete(string codigo) {
     this->codigo = codigo;
 }
 
+Tiquete::Tiquete(){}
+
 // Setters y getters:
 string Tiquete::getCodigo() {
     return codigo;

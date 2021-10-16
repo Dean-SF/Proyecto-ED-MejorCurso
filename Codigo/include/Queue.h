@@ -19,7 +19,7 @@ public:
     virtual void enqueueFront(E element) = 0;
     virtual E dequeueRear() = 0;
     virtual E rearValue() = 0;
-    virtual void print() = 0;
+    //virtual void print() = 0;
 
 };
 

@@ -19,8 +19,9 @@ class Ventana {
         Queue<Tiquete> *colaPrioritaria;
         List<Ventanilla> *ventanillas;
 
-    public: 
+    public:
         Ventana(string codigo, string descripcion, int cantidad);
+        Ventana();
         ~Ventana();
         string getCodigo();
         string getDescripcion();
@@ -34,7 +35,7 @@ class Ventana {
         bool operator==(const Ventana &other);
         bool operator!=(const Ventana &other);
 
-    
+
 };
 
 #endif // VENTANA_H
