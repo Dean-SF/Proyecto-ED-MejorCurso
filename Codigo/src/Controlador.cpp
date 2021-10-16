@@ -108,7 +108,19 @@ bool Controlador::moverServicio(string id){
 
 time_t Controlador::tiempoPromedio(){}
 
-string Controlador::dispensadosVentana(){}
+string Controlador::dispensadosVentana(){
+    string texto = "";
+    int total = 0;
+    Ventana temp;
+    for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
+        temp=ventanas->getElement();
+        texto += "Ventanilla "+temp.getCodigo()+", con una cantidad dispensada de: ";
+        texto+= temp.getTiquetesDispensados()+"."+'\n';
+        total += temp.getTiquetesDispensados();
+    }
+    texto += "Para un total de tiquetes dispensados de: "+total;
+    return texto;
+}
 
 string Controlador::atendidosVentana(){}
 
