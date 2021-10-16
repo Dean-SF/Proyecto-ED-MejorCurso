@@ -29,7 +29,7 @@ class Ventana {
         Queue<Tiquete> *getColaRegular();
         Queue<Tiquete> *getcolaPrioritaria();
         int getTiquetesDispensados();
-        Ventanilla *getVentanilla(int numero);
+        Ventanilla getVentanilla(int numero);
         void setCodigo(string codigo);
         void setDescripcion(string descripcion);
         bool operator==(const Ventana &other);

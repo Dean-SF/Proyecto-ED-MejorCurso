@@ -41,9 +41,9 @@ int Ventana::getTiquetesDispensados() {
     return tiquetesDispensados;
 }
 
-Ventanilla *Ventana::getVentanilla(int numero) {
+Ventanilla Ventana::getVentanilla(int numero) {
     ventanillas->goToPos(numero-1);
-    return &ventanillas->getElement();
+    return ventanillas->getElement();
 }
 
 void Ventana::setCodigo(string codigo) {
