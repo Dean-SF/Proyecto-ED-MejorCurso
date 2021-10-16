@@ -44,11 +44,13 @@
 		<Unit filename="include/Servicios.h" />
 		<Unit filename="include/Tiquete.h" />
 		<Unit filename="include/Ventana.h" />
+		<Unit filename="include/Ventanilla.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Controlador.cpp" />
 		<Unit filename="src/Servicios.cpp" />
 		<Unit filename="src/Tiquete.cpp" />
 		<Unit filename="src/Ventana.cpp" />
+		<Unit filename="src/Ventanilla.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
