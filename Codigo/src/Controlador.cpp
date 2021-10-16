@@ -13,25 +13,50 @@ Controlador::~Controlador(){
 }
 
 string Controlador::estadoColas(){
-    string texto = "";
+    /*string texto = "";
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
-        //texto += ventanas->getElement();
-    }
+        //texto += ventanas->getElement().getCodigo();
+    }*/
 }
 
-bool Controlador::agregarTiquete(bool preferencial, string codigo){}
+bool Controlador::agregarTiquete(bool preferencial, string codigo){
+
+}
 
 string Controlador::atender(string codigoVentana, string numVentanilla){}
 
-bool Controlador::agregarVentana(string codigo, string descripcion, int cantidad){}
+bool Controlador::agregarVentana(string codigo, string descripcion, int cantidad){
 
-bool Controlador::eliminarVentana(string codigo){}
+}
 
-bool Controlador::agregarServicio(){}
+bool Controlador::eliminarVentana(string codigo){
+    /*for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
+        string codigoActual = ventanas->getElement().getCodigo();
+        if(codigoActual==codigo){
+            ventanas->remove();
+            return true;
+        }
+    }*/
+}
 
-bool Controlador::eliminarServicio(){}
+bool Controlador::agregarServicio(string descripcion, string id, string nombre, string codigo){
 
-bool Controlador::moverServicio(){}
+    //Servicios nuevo = new Servicios(string descripcion, string id, nullptr);
+
+    return false;
+}
+
+bool Controlador::eliminarServicio(string id){
+      for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        string idActual = servicios->getElement().getId();
+        if(idActual==id){
+            servicios->remove();
+            return true;
+        }
+    }
+}
+
+bool Controlador::moverServicio(string id){}
 
 time_t Controlador::tiempoPromedio(){}
 

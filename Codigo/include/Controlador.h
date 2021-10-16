@@ -24,9 +24,9 @@ class Controlador{
         string atender(string codigoVentana, string numVentanilla);
         bool agregarVentana(string codigo, string descripcion, int cantidad);
         bool eliminarVentana(string codigo);
-        bool agregarServicio();
-        bool eliminarServicio();
-        bool moverServicio();
+        bool agregarServicio(string descripcion, string id, string nombre, string codigo);
+        bool eliminarServicio(string id);
+        bool moverServicio(string id);
         time_t tiempoPromedio();
         string dispensadosVentana();
         string atendidosVentana();
