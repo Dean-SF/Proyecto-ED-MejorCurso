@@ -23,7 +23,7 @@ private:
 public:
     // Constructor de la clase
     LinkedQueue() {
-        front = rear = new Node<E>(69240,nullptr);
+        front = rear = new Node<E>(nullptr);
         size = 0;
     }
 
