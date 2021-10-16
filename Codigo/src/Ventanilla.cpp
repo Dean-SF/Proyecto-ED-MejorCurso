@@ -27,3 +27,14 @@ void Ventanilla::setNumero(int numero) {
     this->numero = numero;
 }
 
+int Ventanilla::getAtendidos() {
+    return atendidos;
+}
+
+bool Ventanilla::operator==(const Ventanilla &other) {
+    return this->numero == other.numero;
+}
+bool Ventanilla::operator!=(const Ventanilla &other) {
+    return this->numero != other.numero;
+}
+

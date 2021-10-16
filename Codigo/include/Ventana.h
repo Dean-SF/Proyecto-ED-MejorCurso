@@ -15,17 +15,24 @@ class Ventana {
         int tiquetesDispensados;
         string codigo;
         string descripcion;
-        Queue<Tiquete> *colaNormal;
+        Queue<Tiquete> *colaRegular;
         Queue<Tiquete> *colaPrioritaria;
         List<Ventanilla> *ventanillas;
-        
+
     public: 
         Ventana(string codigo, string descripcion, int cantidad);
         ~Ventana();
         string getCodigo();
         string getDescripcion();
         List<Ventanilla> *getVentanillas();
-
+        Queue<Tiquete> *getColaRegular();
+        Queue<Tiquete> *getcolaPrioritaria();
+        int getTiquetesDispensados();
+        Ventanilla *getVentanilla(int numero);
+        void setCodigo(string codigo);
+        void setDescripcion(string descripcion);
+        bool operator==(const Ventana &other);
+        bool operator!=(const Ventana &other);
 
     
 };

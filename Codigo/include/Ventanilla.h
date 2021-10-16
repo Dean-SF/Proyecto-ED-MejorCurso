@@ -10,6 +10,7 @@ siendo atendido al momento.
 class Ventanilla{
     private:
         int numero;
+        int atendidos;
         Tiquete *atendiendo;
     public:
         Ventanilla();
@@ -18,6 +19,9 @@ class Ventanilla{
         void setAtendiendo(Tiquete &atentiendo);
         int getNumero();
         void setNumero(int numero);
+        int getAtendidos();
+        bool operator==(const Ventanilla &other);
+        bool operator!=(const Ventanilla &other);
     
 };
 
