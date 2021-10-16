@@ -4,6 +4,7 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     tiquetesDispensados = 0;
     this->codigo = codigo;
     this->descripcion = descripcion;
+    this->cantidadVentanillas = cantidad;
     colaRegular = new LinkedQueue<Tiquete>();
     colaPrioritaria = new LinkedQueue<Tiquete>();
     ventanillas = new ArrayList<Ventanilla>(cantidad);
@@ -60,4 +61,41 @@ bool Ventana::operator==(const Ventana &other) {
 bool Ventana::operator!=(const Ventana &other) {
     return this->codigo != other.codigo;
 }
+
+int Ventana::getCantidadVentanillas(){
+    return cantidadVentanillas;
+}
+
+void Ventana::agregarTiquete(bool tipo){
+    string texto = codigo;
+    texto += cantidadVentanillas;
+    Tiquete nuevo(texto);
+    if(tipo){
+        colaPrioritaria->enqueue(nuevo);
+    }else{
+        colaRegular->enqueue(nuevo);
+    }
+    tiquetesDispensados+=1;
+}
+
+string Ventana::atender(int codigoVentanilla){
+    for(ventanillas->goToStart(); !ventanillas->atEnd(); ventanillas->next()){
+        if(codigoVentanilla==ventanillas->getElement().getNumero()){
+            Tiquete temp;
+            if(!colaPrioritaria->isEmpty()){
+                temp = colaPrioritaria->dequeue();
+                ventanillas->getElement().setAtendiendo(temp);
+                return "Se atendio exitosamente";
+            }else if(!colaRegular->isEmpty()){
+                temp = colaRegular->dequeue();
+                ventanillas->getElement().setAtendiendo(temp);
+                return "Se atendio exitosamente";
+            }else{
+                return "Las filas estan vacias";
+            }
+        }
+    }
+    return "No existe esa ventanilla.";
+}
+
 

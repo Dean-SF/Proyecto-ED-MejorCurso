@@ -10,9 +10,12 @@
 #include "Queue.h"
 #include "LinkedQueue.h"
 
+using std::string;
+
 class Ventana {
     private:
         int tiquetesDispensados;
+        int cantidadVentanillas;
         string codigo;
         string descripcion;
         Queue<Tiquete> *colaRegular;
@@ -34,7 +37,9 @@ class Ventana {
         void setDescripcion(string descripcion);
         bool operator==(const Ventana &other);
         bool operator!=(const Ventana &other);
-
+        int getCantidadVentanillas();
+        void agregarTiquete(bool tipo);
+        string atender(int ventanilla);
 
 };
 

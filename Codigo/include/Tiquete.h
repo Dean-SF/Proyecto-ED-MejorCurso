@@ -23,6 +23,14 @@ class Tiquete{
         void setCodigo(string codigo);
         time_t getTiempoCreacion();
 
+        bool operator!=(const Tiquete& other){
+            return this->codigo != other.codigo;
+        }
+
+        bool operator==(const Tiquete& other){
+            return this->codigo == other.codigo;
+        }
+
 };
 
 #endif // TIQUETE_H

@@ -20,6 +20,7 @@ public:
     virtual E dequeueRear() = 0;
     virtual E rearValue() = 0;
     //virtual void print() = 0;
+    virtual ArrayList<E> *toList() = 0;
 
 };
 

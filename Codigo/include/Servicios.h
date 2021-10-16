@@ -5,7 +5,7 @@
 #include "Ventana.h"
 
 using std::string;
-using std::ostream;
+//using std::ostream;
 
 class Servicios {
     private:
@@ -20,6 +20,7 @@ class Servicios {
         string getId();
         string getNombre();
         Ventana* getVentana();
+        void agregarTiquete(bool tipo);
 
         bool operator!=(const Servicios& other){
             return this->id != other.id;

@@ -140,10 +140,20 @@ public:
             cout << ", ";
         }
         cout << " ]" << endl;
-
     }*/
 
 
+    ArrayList<E> *toList(){
+        Node<E> *current = front;
+        ArrayList<E> *lista = new ArrayList<E>();
+        while (current->next != nullptr) {
+            current = current->next;
+            lista->append(current->element);
+            if(current->next == nullptr)
+                continue;
+        }
+        return lista;
+    }
 };
 
 #endif

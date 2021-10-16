@@ -18,3 +18,7 @@ string Servicios::getNombre(){
 Ventana* Servicios::getVentana(){
     return ventana;
 }
+
+void Servicios::agregarTiquete(bool tipo){
+    ventana->agregarTiquete(tipo);
+}
