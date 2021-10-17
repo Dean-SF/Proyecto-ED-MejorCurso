@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1634508624 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
+1634510238 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
 	<iostream>
 	"Controlador.h"
 
@@ -49,10 +49,10 @@
 1634418209 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
-1634506433 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+1634508691 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634507916 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+1634510527 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
 	"Controlador.h"
 
 1634507372 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
@@ -63,7 +63,7 @@
 	"Ventana.h"
 	"Servicios.h"
 
-1634340427 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
+1634508764 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
 	"List.h"
 	"Node.h"
 	<iostream>

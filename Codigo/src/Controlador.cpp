@@ -13,13 +13,13 @@ Controlador::~Controlador(){
 }
 
 string Controlador::estadoColas(){
-    string texto = "";
-    Ventana temp;
+    string texto = "-Estado de las colas--"+'\n';
+    Ventana *temp;
     ArrayList<Tiquete> *colaNormal;
     ArrayList<Tiquete> *colaPrioridad;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
-        temp = ventanas->getElement();
-        texto += temp.getCodigo()+" "+temp.getDescripcion()+'\n';
+        temp = ventanas->*getElement();
+        texto += temp.getCodigo()+", "+temp.getDescripcion()+'\n';
         texto += "Con una cantidad de ventanillas de: "+temp.getCantidadVentanillas()+'\n';
         colaNormal = temp.getColaRegular()->toList();
         colaPrioridad = temp.getcolaPrioritaria()->toList();
@@ -42,6 +42,8 @@ string Controlador::estadoColas(){
             }
         }
     }
+    delete colaNormal;
+    delete colaPrioridad;
     return texto;
 }
 
