@@ -15,6 +15,7 @@ int main()
         cout<<"5 -Estadisticas."<<endl<<"0 -Salir."<<endl;
         cout<<"Digite el numero con la opcion deseada: "<<endl;
         cin>>menuNumero;
+        cout<< endl;
         switch(menuNumero){
             case 1:
                 cout<<controlador.estadoColas()<<endl;
@@ -22,6 +23,8 @@ int main()
             case 2:
                 break;
             case 3:
+                cout<<controlador.atender("A",1)<<endl;
+                //Para ver que almenos funcione :D
                 break;
             case 4:
                 break;

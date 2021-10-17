@@ -18,9 +18,9 @@ class Ventana {
         int cantidadVentanillas;
         string codigo;
         string descripcion;
-        Queue<Tiquete> *colaRegular;
-        Queue<Tiquete> *colaPrioritaria;
-        List<Ventanilla> *ventanillas;
+        Queue<Tiquete> *colaRegular = new LinkedQueue<Tiquete>();
+        Queue<Tiquete> *colaPrioritaria= new LinkedQueue<Tiquete>();
+        List<Ventanilla> *ventanillas= new ArrayList<Ventanilla>();
 
     public:
         Ventana(string codigo, string descripcion, int cantidad);
