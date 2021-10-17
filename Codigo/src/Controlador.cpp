@@ -70,7 +70,12 @@ string Controlador::atender(string codigoVentana, int numVentanilla){
 }
 
 bool Controlador::agregarVentana(string codigo, string descripcion, int cantidad){
-    return false;
+    for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
+        if(codigo==ventanas->getElement().getCodigo())
+            return false;
+    }
+    Ventana nueva = Ventana(codigo, descripcion, cantidad);
+    return true;
 }
 
 bool Controlador::eliminarVentana(string codigo){
@@ -85,9 +90,17 @@ bool Controlador::eliminarVentana(string codigo){
 }
 
 bool Controlador::agregarServicio(string descripcion, string id, string nombre, string codigo){
-
-    //Servicios nuevo = new Servicios(string descripcion, string id, nullptr);
-
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        if(id==servicios->getElement().getId())
+            return false;
+    }
+    for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
+        Ventana actual = ventanas->getElement();
+        if(actual.getCodigo()==codigo){
+            Servicios nuevo = Servicios(descripcion, id, nombre, &actual);
+            return true;
+        }
+    }
     return false;
 }
 
@@ -102,7 +115,8 @@ bool Controlador::eliminarServicio(string id){
     return false;
 }
 
-bool Controlador::moverServicio(string id){
+bool Controlador::moverServicio(string id, int pos){
+
     return false;
 }
 

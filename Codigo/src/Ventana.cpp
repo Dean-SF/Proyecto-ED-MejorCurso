@@ -8,6 +8,12 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     colaRegular = new LinkedQueue<Tiquete>();
     colaPrioritaria = new LinkedQueue<Tiquete>();
     ventanillas = new ArrayList<Ventanilla>(cantidad);
+    Ventanilla nuevo;
+    for(int i = 0; i<cantidad; i++){
+        nuevo = Ventanilla();
+        nuevo.setNumero(i);
+        ventanillas->append(nuevo);
+    }
 }
 
 Ventana::Ventana(){}
