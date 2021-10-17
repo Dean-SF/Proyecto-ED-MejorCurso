@@ -72,11 +72,11 @@ int Ventana::getCantidadVentanillas(){
     return cantidadVentanillas;
 }
 
-void Ventana::agregarTiquete(bool tipo){
+void Ventana::agregarTiquete(bool esPrioritaria){
     string texto = codigo;
     texto += cantidadVentanillas;
     Tiquete nuevo(texto);
-    if(tipo){
+    if(esPrioritaria){
         colaPrioritaria->enqueue(nuevo);
     }else{
         colaRegular->enqueue(nuevo);
