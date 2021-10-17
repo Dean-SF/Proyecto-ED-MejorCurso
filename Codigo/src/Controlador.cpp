@@ -116,7 +116,18 @@ bool Controlador::eliminarServicio(string id){
 }
 
 bool Controlador::moverServicio(string id, int pos){
-
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        if(id==servicios->getElement().getId()){
+            int oldPos = servicios->getPos();
+            Servicios viejo = servicios->remove();
+            servicios->goToPos(pos);
+            Servicios temp = servicios->remove();
+            servicios->insert(viejo);
+            servicios->goToPos(oldPos);
+            servicios->remove();
+            servicios->insert(temp);
+        }
+    }
     return false;
 }
 
