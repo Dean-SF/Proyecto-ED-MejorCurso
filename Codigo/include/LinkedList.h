@@ -55,7 +55,7 @@ public:
     Elimina el elemento actual
     */
     E remove() {
-        if (size = 0)
+        if (size == 0)
             throw runtime_error("Error: List is empty");
         if (current == tail)
             throw runtime_error("Error: There is no current element");
