@@ -5,6 +5,7 @@
 class Menu{
     private:
         Controlador controlador = Controlador();
+        bool UltimaVezInt = false;
 
         int obtenerInt() {
             int retorno;
@@ -15,13 +16,17 @@ class Menu{
                 cin.ignore(INT_MAX,'\n');
                 cin >> retorno;
             }
+            UltimaVezInt = true;
             return retorno;
         }
 
         string obtenerString(){
+            if(UltimaVezInt){
+                cin.ignore(INT_MAX,'\n');
+                UltimaVezInt = false;
+            }
             string retorno;
             getline(cin,retorno);
-            cin.ignore(INT_MAX,'\n');
             cin.clear();
             return retorno;
         }
