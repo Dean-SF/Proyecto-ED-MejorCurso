@@ -58,7 +58,6 @@ bool Controlador::agregarTiquete(bool preferencial, string codigo){
             return true;
         }
     }
-    cout<<1;
     return false;
 }
 
@@ -97,7 +96,6 @@ bool Controlador::eliminarVentana(string codigo){
 bool Controlador::agregarServicio(string descripcion, string id, string nombre, string codigo){
     for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
         if(id==servicios->getElement().getId()){
-                cout<<"a";
             return false;
         }
     }
