@@ -75,10 +75,10 @@ class Menu{
             }
             cout<<servicios<<endl;
             cout<<"Digite el codigo del servicio que va a utilizar: ";
-            cin>>servicios;
+            servicios = obtenerString();
             bool tipo = false;
             cout<<"Coloque '1' para cliente preferencial o '0' para normal: ";
-            cin>>tipo;
+            tipo = obtenerInt();
             bool retorno = controlador.agregarTiquete(tipo, servicios);
             cout<<endl;
             if(retorno){
@@ -93,9 +93,9 @@ class Menu{
             string tipoVentana = "";
             int numVentanilla;
             cout<<"Digite el codigo de la Ventana a atender: ";
-            cin>>tipoVentana;
+            tipoVentana = obtenerString();
             cout<<"Digite el numero de la ventanilla asignada: ";
-            cin>>numVentanilla;
+            numVentanilla = obtenerInt();
             cout<<endl<<controlador.atender(tipoVentana, numVentanilla)<<endl;
         }
 
@@ -105,7 +105,7 @@ class Menu{
                     cout<<endl<<"--Menu Administracion--"<<endl;
                     cout<<"1 -Ventanas."<<endl<<"2 -Servicios."<<endl<<"0 -Regresar."<<endl;
                     cout<<endl<<"Digite el numero con la opcion deseada: ";
-                    cin>>menuNumero;
+                    menuNumero = obtenerInt();
                     cout<< endl;
                     switch(menuNumero){
                         case 1:
@@ -120,8 +120,6 @@ class Menu{
                             cout<<"La opcion no esta dentro de las permitidas"<<endl;
                             break;
                     }
-                    cin.ignore(INT_MAX,'\n');
-                    cin.clear();
             }while(menuNumero!=0);
         }
 
@@ -131,7 +129,7 @@ class Menu{
                 cout<<endl<<"--Menu Ventanas--"<<endl;
                     cout<<"1 -Agregar ventana."<<endl<<"2 -Eliminar ventana."<<endl<<"0 -Regresar."<<endl;
                     cout<<endl<<"Digite el numero con la opcion deseada: ";
-                    cin>>menuNumero;
+                    menuNumero = obtenerInt();
                     cout<< endl;
                     switch(menuNumero){
                         case 1:
@@ -155,11 +153,11 @@ class Menu{
             string nombre = "";
             int cantidad;
             cout<<"Digite el codigo de la Ventana: ";
-            cin>>codigo;
+            codigo = obtenerString();
             cout<<"Digite el nombre de la Ventana: ";
-            cin>>nombre;
+            nombre = obtenerString();
             cout<<"Digite la cantidad de ventanillas para la ventana: ";
-            cin>>cantidad;
+            cantidad = obtenerInt();
             bool retorno = controlador.agregarVentana(codigo,nombre,cantidad);
             cout<<endl;
             if(retorno){
@@ -173,7 +171,7 @@ class Menu{
             cout<<"--Eliminar ventana--"<<endl;
             string codigo = "";
             cout<<"Digite el codigo de la Ventana: ";
-            cin>>codigo;
+            codigo = obtenerString();
             cout<<endl;
             bool retorno = controlador.eliminarVentana(codigo);
             if(retorno){
@@ -190,7 +188,7 @@ class Menu{
                     cout<<"1 -Agregar servicio."<<endl<<"2 -Eliminar servicio."<<endl;
                     cout<<"3 -Mover servicio."<<endl<<"0 -Regresar."<<endl;
                     cout<<endl<<"Digite el numero con la opcion deseada: ";
-                    cin>>menuNumero;
+                    menuNumero = obtenerInt();
                     cout<< endl;
                     switch(menuNumero){
                         case 1:
@@ -218,13 +216,13 @@ class Menu{
             string nombre = "";
             string codigoVentana;
             cout<<"Digite el id del servicio: ";
-            cin>>id;
+            id = obtenerString();
             cout<<"Digite el descripcion del servicio: ";
-            cin>>descripcion;
+            descripcion = obtenerString();
             cout<<"Digite el nombre del servicio: ";
-            cin>>nombre;
+            nombre = obtenerString();
             cout<<"Digite el codigo de la Ventana asignada: ";
-            cin>>codigoVentana;
+            codigoVentana = obtenerString();
             bool retorno = controlador.agregarServicio(descripcion,id,nombre,codigoVentana);
             cout<<endl;
             if(retorno){
@@ -238,7 +236,7 @@ class Menu{
             cout<<"--Eliminar servicio--"<<endl;
             string codigo = "";
             cout<<"Digite el codigo del servicio: ";
-            cin>>codigo;
+            codigo = obtenerString();
             cout<<endl;
             bool retorno = controlador.eliminarServicio(codigo);
             if(retorno){
@@ -253,9 +251,9 @@ class Menu{
             string codigo = "";
             int pos;
             cout<<"Digite el codigo del servicio: ";
-            cin>>codigo;
+            codigo = obtenerString();
             cout<<"Digite la nueva posicion del servicio: ";
-            cin>>pos;
+            pos = obtenerInt();
             cout<<endl;
             bool retorno = controlador.moverServicio(codigo,pos);
             if(retorno){
@@ -273,7 +271,7 @@ class Menu{
                 cout<<"3 -Tiquetes atendidos por ventanilla."<<endl<<"4 -Tiquetes dispensados por servicio."<<endl;
                 cout<<"5 -Tiquetes preferenciales."<<endl<<"0 -Salir."<<endl;
                 cout<<endl<<"Digite el numero con la opcion deseada: ";
-                cin>>menuNumero;
+                menuNumero = obtenerInt();
                 cout<< endl;
                 switch(menuNumero){
                     case 1:
