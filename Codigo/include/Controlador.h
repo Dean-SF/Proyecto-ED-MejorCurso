@@ -32,6 +32,7 @@ class Controlador{
         string atendidosVentana();
         string dispensadosServicio();
         int dispensadosPreferenciales();
+        string mostrarServicios();
 
 };
 

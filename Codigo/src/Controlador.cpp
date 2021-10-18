@@ -13,34 +13,37 @@ Controlador::~Controlador(){
 }
 
 string Controlador::estadoColas(){
-    string texto = "--Estado de las colas--";
+    string texto = "--Estado de las colas-- \n";
     Ventana temp;
     ArrayList<Tiquete> *colaNormal;
     ArrayList<Tiquete> *colaPrioridad;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp = ventanas->getElement();
-        texto += temp.getCodigo()+", "+temp.getDescripcion()+'\n';
-        texto += "Con una cantidad de ventanillas de: "+temp.getCantidadVentanillas()+'\n';
+        texto+="\n --";
+        texto += " Ventana: ";
+        texto += temp.getCodigo()+", "+temp.getDescripcion()+". \n";
+        texto += "Con una cantidad de ventanillas de: "+to_string(temp.getCantidadVentanillas());
         colaNormal = temp.getColaRegular()->toList();
         colaPrioridad = temp.getcolaPrioritaria()->toList();
-        texto += "Cola regular: ";
+        texto += "\n Cola regular: ";
         for(colaNormal->goToStart(); !colaNormal->atEnd(); colaNormal->next()){
             texto += colaNormal->getElement().getCodigo();
             if(colaNormal->getPos()!=colaNormal->getSize()){
                 texto+=",";
             }else{
-                texto+="."+'\n';
+                texto+=". \n";
             }
         }
-        texto += "Cola de prioridad: ";
+        texto += "\n Cola de prioridad: ";
         for(colaPrioridad->goToStart(); !colaPrioridad->atEnd(); colaPrioridad->next()){
             texto += colaPrioridad->getElement().getCodigo();
             if(colaPrioridad->getPos()!=colaPrioridad->getSize()){
                 texto+=",";
             }else{
-                texto+="."+'\n';
+                texto+=". \n";
             }
         }
+        texto+="\n ";
     }
     return texto;
 }
@@ -55,6 +58,7 @@ bool Controlador::agregarTiquete(bool preferencial, string codigo){
             return true;
         }
     }
+    cout<<1;
     return false;
 }
 
@@ -75,6 +79,7 @@ bool Controlador::agregarVentana(string codigo, string descripcion, int cantidad
             return false;
     }
     Ventana nueva = Ventana(codigo, descripcion, cantidad);
+    ventanas->append(nueva);
     return true;
 }
 
@@ -91,21 +96,36 @@ bool Controlador::eliminarVentana(string codigo){
 
 bool Controlador::agregarServicio(string descripcion, string id, string nombre, string codigo){
     for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
-        if(id==servicios->getElement().getId())
+        if(id==servicios->getElement().getId()){
+                cout<<"a";
             return false;
+        }
     }
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         Ventana actual = ventanas->getElement();
         if(actual.getCodigo()==codigo){
             Servicios nuevo = Servicios(descripcion, id, nombre, &actual);
+            servicios->append(nuevo);
             return true;
         }
     }
     return false;
 }
 
+string Controlador::mostrarServicios(){
+    string texto = "--Lista de servicios-- \n";
+    string id = "";
+    string nombre = "";
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        id = servicios->getElement().getId();
+        nombre = servicios->getElement().getNombre();
+        texto += "-"+id+", "+nombre+". \n";
+    }
+    return texto;
+}
+
 bool Controlador::eliminarServicio(string id){
-      for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
         string idActual = servicios->getElement().getId();
         if(idActual==id){
             servicios->remove();
@@ -116,18 +136,7 @@ bool Controlador::eliminarServicio(string id){
 }
 
 bool Controlador::moverServicio(string id, int pos){
-    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
-        if(id==servicios->getElement().getId()){
-            int oldPos = servicios->getPos();
-            Servicios viejo = servicios->remove();
-            servicios->goToPos(pos);
-            Servicios temp = servicios->remove();
-            servicios->insert(viejo);
-            servicios->goToPos(oldPos);
-            servicios->remove();
-            servicios->insert(temp);
-        }
-    }
+    //ahacer un swap : D
     return false;
 }
 

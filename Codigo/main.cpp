@@ -7,7 +7,25 @@ int main()
 {
     //cout << "MUY BUENAS AL MEJOR CURSO DE ESTE PLANETA!!!" << endl;
     Controlador controlador = Controlador();
-    int menuNumero = -1;
+    cout<<controlador.eliminarVentana("c1")<<endl;
+    cout<<controlador.agregarVentana("C","Consulta",5)<<endl;
+    cout<<controlador.agregarVentana("I","Iiiii",5)<<endl;
+    cout<<controlador.agregarVentana("O","Horarios",5)<<endl;
+    cout<<controlador.estadoColas()<<endl;
+
+    cout<<controlador.agregarServicio("no se", "P", "Pagos", "C")<<endl;
+    cout<<controlador.agregarServicio("no se", "A", "alala", "I")<<endl;
+    cout<<controlador.agregarServicio("no se", "Z", "zzzz", "O")<<endl;
+    cout<<controlador.mostrarServicios()<<endl;
+
+    cout<<controlador.agregarTiquete(false , "P")<<endl;
+    cout<<controlador.agregarTiquete(false , "P")<<endl;
+    cout<<controlador.agregarTiquete(false , "P")<<endl;
+    cout<<controlador.agregarTiquete(false , "P")<<endl;
+    cout<<controlador.agregarTiquete(true , "P")<<endl;
+    cout<<controlador.agregarTiquete(true , "P")<<endl;
+
+    /*int menuNumero = -1;
     do{
         cout<<endl<<"--Menu principal--"<<endl;
         cout<<"1 -Estado de las colas."<<endl<<"2 -Solicitar Tiquete."<<endl;
@@ -37,6 +55,6 @@ int main()
                 break;
         }
     }while(menuNumero!=0);
-    cout<<"Hasta luego!";
+    cout<<"Hasta luego!";*/
     return 0;
 }

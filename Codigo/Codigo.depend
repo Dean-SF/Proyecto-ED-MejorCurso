@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1634513479 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
+1634569902 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
 	<iostream>
 	"Controlador.h"
 
-1634422646 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+1634570073 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
 	"Servicios.h"
 
-1634422680 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
+1634570073 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
 	<iostream>
 	<string.h>
 	"Ventana.h"
 
-1634513073 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634572709 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
@@ -26,7 +26,7 @@
 	<string.h>
 	<time.h>
 
-1634417236 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
+1634565271 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
 	"Tiquete.h"
 
 1634340394 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\list.h
@@ -49,13 +49,13 @@
 1634418209 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
-1634513073 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+1634572308 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634513159 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+1634571834 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
 	"Controlador.h"
 
-1634507372 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
+1634568609 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
 	<iostream>
 	<string.h>
 	<time.h>
@@ -138,6 +138,6 @@
 1634418553 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634417236 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventanilla.cpp
+1634565271 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventanilla.cpp
 	"Ventanilla.h"
 
