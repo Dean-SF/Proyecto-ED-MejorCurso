@@ -280,19 +280,19 @@ class Menu{
                 cout<< endl;
                 switch(menuNumero){
                     case 1:
-                        controlador.tiempoPromedio();
+                        cout<<controlador.tiempoPromedio()<<endl;
                         break;
                     case 2:
-                        controlador.dispensadosVentana();
+                        cout<<controlador.dispensadosVentana()<<endl;
                         break;
                     case 3:
-                        controlador.atendidosVentana();
+                        cout<<controlador.atendidosVentana()<<endl;
                         break;
                     case 4:
-                        controlador.dispensadosServicio();
+                        cout<<controlador.dispensadosServicio()<<endl;
                         break;
                     case 5:
-                        controlador.dispensadosPreferenciales();
+                        cout<<controlador.dispensadosPreferenciales()<<endl;
                         break;
                     case 0:
                         break;

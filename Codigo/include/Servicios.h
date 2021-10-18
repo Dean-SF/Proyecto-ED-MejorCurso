@@ -9,6 +9,7 @@ using std::string;
 
 class Servicios {
     private:
+        int cantidadDispensada;
         string descripcion;
         string id;
         string nombre;
@@ -24,6 +25,7 @@ class Servicios {
         string getNombre();
         Ventana* getVentana();
         void agregarTiquete(bool tipo);
+        int getCantidadDispensada();
 
         bool operator!=(const Servicios& other){
             return this->id != other.id;

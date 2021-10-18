@@ -16,6 +16,7 @@ class Ventana {
     private:
         int tiquetesDispensados;
         int cantidadVentanillas;
+        int totalAtendidos;
         string codigo;
         string descripcion;
         Queue<Tiquete> *colaRegular;
@@ -42,6 +43,7 @@ class Ventana {
         int getCantidadVentanillas();
         void agregarTiquete(bool tipo);
         string atender(int ventanilla);
+        int getTotalAtendidos();
 
 };
 

@@ -5,6 +5,7 @@ Servicios::Servicios(){
 }
 
 Servicios::Servicios(string descripcion, string id, string nombre,Ventana *ventana){
+    cantidadDispensada = 0;
     this->descripcion = descripcion;
     this->id = id;
     this->nombre = nombre;
@@ -40,5 +41,10 @@ Ventana* Servicios::getVentana(){
 }
 
 void Servicios::agregarTiquete(bool tipo){
+    cantidadDispensada+=1;
     ventana->agregarTiquete(tipo);
+}
+
+int Servicios::getCantidadDispensada(){
+    return cantidadDispensada;
 }

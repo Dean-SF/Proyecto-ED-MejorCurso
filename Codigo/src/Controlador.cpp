@@ -55,10 +55,14 @@ bool Controlador::agregarTiquete(bool preferencial, string codigo){
         temp = servicios->getElement();
         if(temp.getId()==codigo){
             temp.agregarTiquete(preferencial);
+            if(preferencial){
+                totalPreferenciales+=1;
+            }
+            totalTiquetes+=1;
             return true;
         }
     }
-    
+
     return false;
 }
 
@@ -142,7 +146,7 @@ bool Controlador::moverServicio(string id, int pos){
     return false;
 }
 
-time_t Controlador::tiempoPromedio(){}
+string Controlador::tiempoPromedio(){}
 
 string Controlador::dispensadosVentana(){
     string texto = "";
@@ -151,17 +155,41 @@ string Controlador::dispensadosVentana(){
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp=ventanas->getElement();
         texto += "Ventanilla "+temp->getCodigo()+", con una cantidad dispensada de: ";
-        texto+= temp->getTiquetesDispensados()+"."+'\n';
+        texto+= to_string(temp->getTiquetesDispensados())+". \n";
         total += temp->getTiquetesDispensados();
     }
-    texto += "Para un total de tiquetes dispensados de: "+total;
+    texto += "Para un total de tiquetes dispensados de: "+to_string(total);
     return texto;
 }
 
-string Controlador::atendidosVentana(){}
+string Controlador::atendidosVentana(){
+    string texto = "";
+    int total = 0;
+    Ventana *temp;
+    for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
+        temp=ventanas->getElement();
+        texto += "Ventanilla "+temp->getCodigo()+", con una cantidad atendida de: ";
+        texto+= to_string(temp->getTotalAtendidos())+". \n";
+        total += temp->getTotalAtendidos();
+    }
+    texto += "Para un total de tiquetes dispensados de: "+to_string(total);
+    return texto;
+}
 
-string Controlador::dispensadosServicio(){}
+string Controlador::dispensadosServicio(){
+    string texto = "";
+    int total = 0;
+    Servicios temp;
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        temp=servicios->getElement();
+        texto += "Servicio "+temp.getId()+", con una cantidad dispensada de: ";
+        texto+= to_string(temp.getCantidadDispensada())+". \n";
+        total += temp.getCantidadDispensada();
+    }
+    texto += "Para un total de tiquetes dispensados de: "+to_string(total);
+    return texto;
+}
 
-int Controlador::dispensadosPreferenciales(){
-    return totalPreferenciales;
+string Controlador::dispensadosPreferenciales(){
+    return "La cantidad de tiquetes preferenciales dispensados es de: "+to_string(totalPreferenciales);
 }

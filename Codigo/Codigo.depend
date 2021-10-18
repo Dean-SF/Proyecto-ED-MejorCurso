@@ -4,15 +4,15 @@
 	"Controlador.h"
 	"Menu.h"
 
-1634570073 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+1634594156 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
 	"Servicios.h"
 
-1634570073 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
+1634594156 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
 	<iostream>
 	<string.h>
 	"Ventana.h"
 
-1634572911 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634593611 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
@@ -22,7 +22,7 @@
 	"Queue.h"
 	"LinkedQueue.h"
 
-1634424209 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\tiquete.h
+1634592366 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\tiquete.h
 	<iostream>
 	<string.h>
 	<time.h>
@@ -47,16 +47,16 @@
 
 1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\node.h
 
-1634418209 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
+1634592366 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
-1634574683 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+1634593772 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634577659 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+1634593909 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
 	"Controlador.h"
 
-1634568609 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
+1634594544 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
 	<iostream>
 	<string.h>
 	<time.h>
@@ -142,5 +142,5 @@
 1634565271 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventanilla.cpp
 	"Ventanilla.h"
 
-1634578159 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\menu.h
+1634593428 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\menu.h
 

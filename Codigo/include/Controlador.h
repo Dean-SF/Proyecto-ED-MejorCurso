@@ -27,11 +27,11 @@ class Controlador{
         bool agregarServicio(string descripcion, string id, string nombre, string codigo);
         bool eliminarServicio(string id);
         bool moverServicio(string id, int pos);
-        time_t tiempoPromedio();
+        string tiempoPromedio();
         string dispensadosVentana();
         string atendidosVentana();
         string dispensadosServicio();
-        int dispensadosPreferenciales();
+        string dispensadosPreferenciales();
         string mostrarServicios();
 
 };

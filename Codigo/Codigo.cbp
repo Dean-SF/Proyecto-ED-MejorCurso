@@ -39,6 +39,7 @@
 		<Unit filename="include/LinkedList.h" />
 		<Unit filename="include/LinkedQueue.h" />
 		<Unit filename="include/List.h" />
+		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Node.h" />
 		<Unit filename="include/Queue.h" />
 		<Unit filename="include/Servicios.h" />
