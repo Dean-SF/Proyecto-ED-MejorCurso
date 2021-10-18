@@ -6,6 +6,26 @@ class Menu{
     private:
         Controlador controlador = Controlador();
 
+        int obtenerInt() {
+            int retorno;
+            cin >> retorno;
+            while (!cin.good()){
+                cout << "ERROR VUELVA A INTENTARLO" << endl;
+                cin.clear();
+                cin.ignore(INT_MAX,'\n');
+                cin >> retorno;
+            }
+            return retorno;
+        }
+
+        string obtenerString(){
+            string retorno;
+            getline(cin,retorno);
+            cin.ignore(INT_MAX,'\n');
+            cin.clear();
+            return retorno;
+        }
+
     public:
         Menu(){}
         ~Menu(){}
@@ -18,7 +38,7 @@ class Menu{
                 cout<<"3 -Atender."<<endl<<"4 -Andministracion."<<endl;
                 cout<<"5 -Estadisticas."<<endl<<"0 -Salir."<<endl;
                 cout<<endl<<"Digite el numero con la opcion deseada: ";
-                cin>>menuNumero;
+                menuNumero = obtenerInt();
                 cout<< endl;
                 switch(menuNumero){
                     case 1:
@@ -82,7 +102,7 @@ class Menu{
         void menuAdministracion(){
             int menuNumero = -1;
             do{
-                cout<<endl<<"--Menu Administracion--"<<endl;
+                    cout<<endl<<"--Menu Administracion--"<<endl;
                     cout<<"1 -Ventanas."<<endl<<"2 -Servicios."<<endl<<"0 -Regresar."<<endl;
                     cout<<endl<<"Digite el numero con la opcion deseada: ";
                     cin>>menuNumero;
@@ -92,7 +112,7 @@ class Menu{
                             menuAdministracionVentanas();
                             break;
                         case 2:
-                            eliminarVentanaContrlador();
+                            menuAdministracionServicios();
                             break;
                         case 0:
                             break;
@@ -100,6 +120,8 @@ class Menu{
                             cout<<"La opcion no esta dentro de las permitidas"<<endl;
                             break;
                     }
+                    cin.ignore(INT_MAX,'\n');
+                    cin.clear();
             }while(menuNumero!=0);
         }
 
