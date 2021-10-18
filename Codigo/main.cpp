@@ -1,10 +1,13 @@
 #include <iostream>
 #include "Controlador.h"
+#include "Menu.h"
 
 using namespace std;
 
 int main()
 {
+    Menu menu = Menu();
+    menu.menuPrincipal();
     //cout << "MUY BUENAS AL MEJOR CURSO DE ESTE PLANETA!!!" << endl;
     Controlador controlador = Controlador();
     cout<<controlador.eliminarVentana("c1")<<endl;

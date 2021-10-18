@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1634569902 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
+1634574683 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\main.cpp
 	<iostream>
 	"Controlador.h"
+	"Menu.h"
 
 1634570073 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
 	"Servicios.h"
@@ -11,7 +12,7 @@
 	<string.h>
 	"Ventana.h"
 
-1634572709 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634572911 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
@@ -49,10 +50,10 @@
 1634418209 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
-1634572308 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+1634574683 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634571834 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
+1634577659 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
 	"Controlador.h"
 
 1634568609 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\controlador.h
@@ -140,4 +141,6 @@
 
 1634565271 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventanilla.cpp
 	"Ventanilla.h"
+
+1634578159 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\menu.h
 
