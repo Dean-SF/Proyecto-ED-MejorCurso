@@ -4,7 +4,7 @@ Controlador::Controlador(){
     totalTiquetes = 0;
     totalPreferenciales = 0;
     servicios = new LinkedList<Servicios>();
-    ventanas = new LinkedList<Ventana>();
+    ventanas = new LinkedList<Ventana*>();
 }
 
 Controlador::~Controlador(){
@@ -14,17 +14,17 @@ Controlador::~Controlador(){
 
 string Controlador::estadoColas(){
     string texto = "--Estado de las colas-- \n";
-    Ventana temp;
+    Ventana *temp;
     ArrayList<Tiquete> *colaNormal;
     ArrayList<Tiquete> *colaPrioridad;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp = ventanas->getElement();
         texto+="\n --";
         texto += " Ventana: ";
-        texto += temp.getCodigo()+", "+temp.getDescripcion()+". \n";
-        texto += "Con una cantidad de ventanillas de: "+to_string(temp.getCantidadVentanillas());
-        colaNormal = temp.getColaRegular()->toList();
-        colaPrioridad = temp.getcolaPrioritaria()->toList();
+        texto += temp->getCodigo()+", "+temp->getDescripcion()+". \n";
+        texto += "Con una cantidad de ventanillas de: "+to_string(temp->getCantidadVentanillas());
+        colaNormal = temp->getColaRegular()->toList();
+        colaPrioridad = temp->getcolaPrioritaria()->toList();
         texto += "\n Cola regular: ";
         for(colaNormal->goToStart(); !colaNormal->atEnd(); colaNormal->next()){
             texto += colaNormal->getElement().getCodigo();
@@ -58,34 +58,36 @@ bool Controlador::agregarTiquete(bool preferencial, string codigo){
             return true;
         }
     }
-    cout<<1;
+    
     return false;
 }
 
 string Controlador::atender(string codigoVentana, int numVentanilla){
-    Ventana temp;
+    Ventana *temp;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp=ventanas->getElement();
-        if(codigoVentana==temp.getCodigo()){
-            return temp.atender(numVentanilla);
+        if(codigoVentana==temp->getCodigo()){
+            return temp->atender(numVentanilla);
         }
     }
     return "No exite esta ventana.";
 }
 
 bool Controlador::agregarVentana(string codigo, string descripcion, int cantidad){
+    Ventana *actual;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
-        if(codigo==ventanas->getElement().getCodigo())
+        actual = ventanas->getElement();
+        if(codigo== actual->getCodigo())
             return false;
     }
-    Ventana nueva = Ventana(codigo, descripcion, cantidad);
+    Ventana *nueva = new Ventana(codigo, descripcion, cantidad);
     ventanas->append(nueva);
     return true;
 }
 
 bool Controlador::eliminarVentana(string codigo){
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
-        string codigoActual = ventanas->getElement().getCodigo();
+        string codigoActual = ventanas->getElement()->getCodigo();
         if(codigoActual==codigo){
             ventanas->remove();
             return true;
@@ -97,14 +99,14 @@ bool Controlador::eliminarVentana(string codigo){
 bool Controlador::agregarServicio(string descripcion, string id, string nombre, string codigo){
     for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
         if(id==servicios->getElement().getId()){
-                cout<<"a";
             return false;
         }
     }
+    Ventana *actual;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
-        Ventana actual = ventanas->getElement();
-        if(actual.getCodigo()==codigo){
-            Servicios nuevo = Servicios(descripcion, id, nombre, &actual);
+        actual = ventanas->getElement();
+        if(actual->getCodigo()==codigo){
+            Servicios nuevo = Servicios(descripcion, id, nombre, actual);
             servicios->append(nuevo);
             return true;
         }
@@ -145,12 +147,12 @@ time_t Controlador::tiempoPromedio(){}
 string Controlador::dispensadosVentana(){
     string texto = "";
     int total = 0;
-    Ventana temp;
+    Ventana *temp;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp=ventanas->getElement();
-        texto += "Ventanilla "+temp.getCodigo()+", con una cantidad dispensada de: ";
-        texto+= temp.getTiquetesDispensados()+"."+'\n';
-        total += temp.getTiquetesDispensados();
+        texto += "Ventanilla "+temp->getCodigo()+", con una cantidad dispensada de: ";
+        texto+= temp->getTiquetesDispensados()+"."+'\n';
+        total += temp->getTiquetesDispensados();
     }
     texto += "Para un total de tiquetes dispensados de: "+total;
     return texto;

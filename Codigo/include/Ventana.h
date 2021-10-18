@@ -18,14 +18,16 @@ class Ventana {
         int cantidadVentanillas;
         string codigo;
         string descripcion;
-        Queue<Tiquete> *colaRegular = new LinkedQueue<Tiquete>();
-        Queue<Tiquete> *colaPrioritaria= new LinkedQueue<Tiquete>();
-        List<Ventanilla> *ventanillas= new ArrayList<Ventanilla>();
+        Queue<Tiquete> *colaRegular;
+        Queue<Tiquete> *colaPrioritaria;
+        List<Ventanilla> *ventanillas;
 
     public:
         Ventana(string codigo, string descripcion, int cantidad);
+        Ventana(const Ventana& other);
         Ventana();
         ~Ventana();
+        void operator=(const Ventana& other);
         string getCodigo();
         string getDescripcion();
         List<Ventanilla> *getVentanillas();

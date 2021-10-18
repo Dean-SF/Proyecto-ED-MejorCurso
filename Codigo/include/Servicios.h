@@ -17,6 +17,9 @@ class Servicios {
     public:
         Servicios(string descripcion, string id, string nombre,Ventana *ventana);
         Servicios();
+        Servicios(const Servicios& other);
+        ~Servicios();
+        void operator=(const Servicios& other);
         string getId();
         string getNombre();
         Ventana* getVentana();

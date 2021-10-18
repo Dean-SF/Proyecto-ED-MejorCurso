@@ -5,9 +5,9 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     this->codigo = codigo;
     this->descripcion = descripcion;
     this->cantidadVentanillas = cantidad;
-    /*colaRegular = new LinkedQueue<Tiquete>();
+    colaRegular = new LinkedQueue<Tiquete>();
     colaPrioritaria = new LinkedQueue<Tiquete>();
-    ventanillas = new ArrayList<Ventanilla>(cantidad);*/
+    ventanillas = new ArrayList<Ventanilla>(cantidad);
     Ventanilla nuevo;
     for(int i = 0; i<cantidad; i++){
         nuevo = Ventanilla();
@@ -16,12 +16,65 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     }
 }
 
-Ventana::Ventana(){}
+Ventana::Ventana(){
+    colaRegular = nullptr;
+    colaPrioritaria = nullptr;
+    ventanillas = nullptr;
+}
 
 Ventana::~Ventana() {
     delete colaRegular;
     delete colaPrioritaria;
     delete ventanillas;
+}
+
+Ventana::Ventana(const Ventana &other) {
+    List<Ventanilla> *ventanillasCopia = other.ventanillas;
+    List<Tiquete> *regularCopia = other.colaRegular->toList();
+    List<Tiquete> *prioritariaCopia = other.colaRegular->toList();
+
+    this->tiquetesDispensados = other.tiquetesDispensados;
+    this->codigo = other.codigo;
+    this->descripcion = other.descripcion;
+    this->cantidadVentanillas = other.cantidadVentanillas;
+    
+    colaRegular = new LinkedQueue<Tiquete>();
+    colaPrioritaria = new LinkedQueue<Tiquete>();
+    ventanillas = new ArrayList<Ventanilla>(other.ventanillas->getSize());
+    for(ventanillasCopia->goToStart();!ventanillasCopia->atEnd();ventanillasCopia->next()) {
+        ventanillas->append(ventanillasCopia->getElement());
+    }
+    for(regularCopia->goToStart();!regularCopia->atEnd();regularCopia->next()) {
+        colaRegular->enqueue(regularCopia->getElement());
+    }
+    for(prioritariaCopia->goToStart();!prioritariaCopia->atEnd();prioritariaCopia->next()) {
+        colaPrioritaria->enqueue(prioritariaCopia->getElement());
+    }
+}
+
+void Ventana::operator=(const Ventana &other){
+    this->~Ventana();
+    List<Ventanilla> *ventanillasCopia = other.ventanillas;
+    List<Tiquete> *regularCopia = other.colaRegular->toList();
+    List<Tiquete> *prioritariaCopia = other.colaRegular->toList();
+
+    this->tiquetesDispensados = other.tiquetesDispensados;
+    this->codigo = other.codigo;
+    this->descripcion = other.descripcion;
+    this->cantidadVentanillas = other.cantidadVentanillas;
+    
+    colaRegular = new LinkedQueue<Tiquete>();
+    colaPrioritaria = new LinkedQueue<Tiquete>();
+    ventanillas = new ArrayList<Ventanilla>(other.ventanillas->getSize());
+    for(ventanillasCopia->goToStart();!ventanillasCopia->atEnd();ventanillasCopia->next()) {
+        ventanillas->append(ventanillasCopia->getElement());
+    }
+    for(regularCopia->goToStart();!regularCopia->atEnd();regularCopia->next()) {
+        colaRegular->enqueue(regularCopia->getElement());
+    }
+    for(prioritariaCopia->goToStart();!prioritariaCopia->atEnd();prioritariaCopia->next()) {
+        colaPrioritaria->enqueue(prioritariaCopia->getElement());
+    }
 }
 
 string Ventana::getCodigo() {
@@ -75,7 +128,7 @@ int Ventana::getCantidadVentanillas(){
 void Ventana::agregarTiquete(bool esPrioritaria){
     string texto = codigo;
     texto += cantidadVentanillas;
-    Tiquete nuevo(texto);
+    Tiquete nuevo = Tiquete(texto);
     if(esPrioritaria){
         colaPrioritaria->enqueue(nuevo);
     }else{

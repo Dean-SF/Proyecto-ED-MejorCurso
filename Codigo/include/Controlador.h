@@ -11,7 +11,7 @@ using std::string;
 
 class Controlador{
     private:
-        LinkedList<Ventana> *ventanas;
+        LinkedList<Ventana*> *ventanas;
         LinkedList<Servicios> *servicios;
         int totalTiquetes;
         int totalPreferenciales;

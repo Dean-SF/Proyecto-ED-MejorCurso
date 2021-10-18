@@ -19,6 +19,8 @@ class Tiquete{
     public:
         Tiquete();
         Tiquete(string codigo);
+        Tiquete(const Tiquete &other);
+        void operator=(const Tiquete &other);
         string getCodigo();
         void setCodigo(string codigo);
         time_t getTiempoCreacion();

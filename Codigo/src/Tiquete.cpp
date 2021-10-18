@@ -7,7 +7,20 @@ Tiquete::Tiquete(string codigo) {
     this->codigo = codigo;
 }
 
-Tiquete::Tiquete(){}
+Tiquete::Tiquete(){
+    codigo = "N/A";
+    tiempo_creacion = 0;
+}
+
+Tiquete::Tiquete(const Tiquete &other){
+    this->codigo = other.codigo;
+    this->tiempo_creacion = other.tiempo_creacion;
+}
+
+void Tiquete::operator=(const Tiquete &other) {
+    this->codigo = other.codigo;
+    this->tiempo_creacion = other.tiempo_creacion;
+}
 
 // Setters y getters:
 string Tiquete::getCodigo() {
