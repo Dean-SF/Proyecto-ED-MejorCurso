@@ -1,3 +1,6 @@
+//Creado por: Esteban Perez Picado
+//Fecha de creacion: 15/10/2021
+//Ultima modificacion: 18/10/2021
 #ifndef SERVICIOS_H
 #define SERVICIOS_H
 #include <iostream>
@@ -7,6 +10,10 @@
 using std::string;
 //using std::ostream;
 
+/*
+Clase Servicios que se usa para representar un servicio con una descripcion, id,
+nombre y tiene asignado un puntero a la ventana asignada respectiva
+*/
 class Servicios {
     private:
         int cantidadDispensada;
@@ -28,10 +35,16 @@ class Servicios {
         int getCantidadDispensada();
         string getDescripcion();
 
+        /*
+        Sobregarga del operador de comparacion diferente
+        */
         bool operator!=(const Servicios& other){
             return this->id != other.id;
         }
 
+        /*
+        Sobregarga del operador de comparacion igual
+        */
         bool operator==(const Servicios& other){
             return this->id == other.id;
         }

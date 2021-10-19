@@ -1,3 +1,7 @@
+//Creado por: Esteban Perez Picado
+//Fecha de creacion: 15/10/2021
+//Ultima modificacion: 18/10/2021
+//Modificado por: Deyan Sanabria Fallas
 #ifndef CONTROLADOR_H
 #define CONTROLADOR_H
 #include <iostream>
@@ -9,6 +13,10 @@
 
 using std::string;
 
+/*
+Clase que controla todos los objetos del  programa para y tiene los
+metodos para realizar la funcionalidad deseada en el menu.
+*/
 class Controlador{
     private:
         LinkedList<Ventana*> *ventanas;
