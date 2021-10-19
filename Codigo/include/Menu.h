@@ -5,7 +5,9 @@
 #ifndef MENU_H
 #define MENU_H
 
-
+/*
+Crea la funcion del menu que maneja todos los metodos del crontolador
+*/
 class Menu{
     private:
         Controlador controlador = Controlador();
@@ -36,9 +38,15 @@ class Menu{
         }
 
     public:
+        /*
+        Contructores y destructor default
+        */
         Menu(){}
         ~Menu(){}
 
+        /*
+        Metodo de menu principal donde se ven todas las caracteristicas del programa.
+        */
         void menuPrincipal(){
             int menuNumero = -1;
             do{
@@ -75,6 +83,9 @@ class Menu{
             cout<<"Hasta luego!";
         }
 
+        /*
+        Metodo que pide al usuarios los datos para agregar un tiquete.
+        */
         void agregarTiqueteControlador(){
             cout<<"--Agregar  tiquete--"<<endl;
             string servicios = controlador.mostrarServicios();
@@ -97,6 +108,9 @@ class Menu{
             }
         }
 
+        /*
+        Metodo que pide al usuario los datos para atender un tiquete
+        */
         void controladorAtender(){
             cout<<"--Atender--"<<endl;
             string tipoVentana = "";
@@ -108,6 +122,9 @@ class Menu{
             cout<<endl<<controlador.atender(tipoVentana, numVentanilla)<<endl;
         }
 
+        /*
+        Un submenu con las especificaciones para ventana y servicio
+        */
         void menuAdministracion(){
             int menuNumero = -1;
             do{
@@ -132,6 +149,9 @@ class Menu{
             }while(menuNumero!=0);
         }
 
+        /*
+        Menu para administrar las ventanas
+        */
         void menuAdministracionVentanas(){
             int menuNumero = -1;
             do{
@@ -156,6 +176,9 @@ class Menu{
             }while(menuNumero!=0);
         }
 
+        /*
+        Metodo que pide al usuarios los datos para agregar una nueva ventana.
+        */
         void agrearVentanaControlador(){
             cout<<"--Agregar ventana--"<<endl;
             string codigo = "";
@@ -176,6 +199,9 @@ class Menu{
             }
         }
 
+        /*
+        Metodo que pide un codigo para eliminar la ventana asociada.
+        */
         void eliminarVentanaContrlador(){
             cout<<"--Eliminar ventana--"<<endl;
             string codigo = "";
@@ -193,6 +219,9 @@ class Menu{
             }
         }
 
+        /*
+        Menu para le manejo de los metodos para administrar los servicios.
+        */
         void menuAdministracionServicios(){
             int menuNumero = -1;
             do{
@@ -221,6 +250,9 @@ class Menu{
             }while(menuNumero!=0);
         }
 
+        /*
+        Metodo que pide los datos para agregar un servicio.
+        */
         void agrearServicioControlador(){
             cout<<"--Agregar servicio--"<<endl;
             string id = "";
@@ -244,6 +276,9 @@ class Menu{
             }
         }
 
+        /*
+        Metodo que con el codigo del servicio lo elimina.
+        */
         void eliminarServicioContrlador(){
             cout<<"--Eliminar servicio--"<<endl;
             string codigo = "";
@@ -258,6 +293,9 @@ class Menu{
             }
         }
 
+        /*
+        Metodo que pide el codigo de un servicio y una posicion para moverlo a esta
+        */
         void moverServicioControlador(){
             cout<<"--Mover servicio--"<<endl;
             string codigo = "";
@@ -275,6 +313,9 @@ class Menu{
             }
         }
 
+        /*
+        Menu para elegir las diferentes opciones de estadisticas del programa.
+        */
         void menuEstadisticas(){
             int menuNumero = -1;
             do{

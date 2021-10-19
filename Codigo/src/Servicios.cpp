@@ -29,7 +29,7 @@ Servicios::~Servicios() {
 }
 
 /*
-                              !!Hacer!!
+Metodo del constrcotor de copia para varables no inicializadas
 */
 Servicios::Servicios(const Servicios &other) {
     this->descripcion = other.descripcion;
