@@ -23,7 +23,7 @@ class Controlador{
         bool agregarTiquete(bool preferencial, string codigo);
         string atender(string codigoVentana, int numVentanilla);
         bool agregarVentana(string codigo, string descripcion, int cantidad);
-        bool eliminarVentana(string codigo);
+        int eliminarVentana(string codigo);
         bool agregarServicio(string descripcion, string id, string nombre, string codigo);
         bool eliminarServicio(string id);
         bool moverServicio(string id, int pos);

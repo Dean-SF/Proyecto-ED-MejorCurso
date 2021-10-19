@@ -7,6 +7,7 @@
 
 #include "List.h"
 #include "ArrayList.h"
+#include "LinkedList.h"
 #include "Queue.h"
 #include "LinkedQueue.h"
 
@@ -22,7 +23,8 @@ class Ventana {
         Queue<Tiquete> *colaRegular;
         Queue<Tiquete> *colaPrioritaria;
         List<Ventanilla> *ventanillas;
-
+        List<double> *tiemposEspera;
+        void agregarTiempoEspera(Tiquete tiquete);
     public:
         Ventana(string codigo, string descripcion, int cantidad);
         Ventana(const Ventana& other);
@@ -44,6 +46,7 @@ class Ventana {
         void agregarTiquete(bool tipo);
         string atender(int ventanilla);
         int getTotalAtendidos();
+        string getTiempoEspera();
 
 };
 

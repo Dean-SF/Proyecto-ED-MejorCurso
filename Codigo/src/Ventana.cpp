@@ -9,6 +9,7 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     colaRegular = new LinkedQueue<Tiquete>();
     colaPrioritaria = new LinkedQueue<Tiquete>();
     ventanillas = new ArrayList<Ventanilla>(cantidad);
+    tiemposEspera = new LinkedList<double>();
     Ventanilla nuevo;
     for(int i = 0; i<cantidad; i++){
         nuevo = Ventanilla();
@@ -139,6 +140,14 @@ void Ventana::agregarTiquete(bool esPrioritaria){
     tiquetesDispensados+=1;
 }
 
+void Ventana::agregarTiempoEspera(Tiquete tiquete) {
+    time_t tiempoCreacion = tiquete.getTiempoCreacion();
+    time_t tiempoActual;
+    time(&tiempoActual);
+    double tiempoEspera = difftime(tiempoActual,tiempoCreacion);
+    tiemposEspera->append(tiempoEspera);
+}
+
 string Ventana::atender(int codigoVentanilla){
     for(ventanillas->goToStart(); !ventanillas->atEnd(); ventanillas->next()){
         if(codigoVentanilla==ventanillas->getElement().getNumero()){
@@ -146,22 +155,44 @@ string Ventana::atender(int codigoVentanilla){
             if(!colaPrioritaria->isEmpty()){
                 temp = colaPrioritaria->dequeue();
                 ventanillas->getElement().setAtendiendo(temp);
+                agregarTiempoEspera(temp);
                 totalAtendidos+=1;
                 return "Se atendio exitosamente";
-            }else if(!colaRegular->isEmpty()){
+            }
+            if(!colaRegular->isEmpty()){
                 temp = colaRegular->dequeue();
                 ventanillas->getElement().setAtendiendo(temp);
+                agregarTiempoEspera(temp);
                 totalAtendidos +=1;
                 return "Se atendio exitosamente";
-            }else{
-                return "Las filas estan vacias";
             }
+            return "Las filas estan vacias";
+            
         }
     }
     return "No existe esa ventanilla.";
 }
 
- int Ventana::getTotalAtendidos(){
+int Ventana::getTotalAtendidos(){
     return totalAtendidos;
+ }
+
+string Ventana::getTiempoEspera() {
+    string texto;
+    int segundos = 0;
+    int minutos = 0;
+    int horas = 0;
+    for(tiemposEspera->goToStart(); !tiemposEspera->atEnd(); tiemposEspera->next())
+        segundos += tiemposEspera->getElement(); 
+    if(tiemposEspera->getSize() != 0)
+        segundos = segundos/tiemposEspera->getSize();
+    horas = segundos/3600;
+    segundos = segundos%60;
+    minutos = segundos/60;
+    segundos = segundos%60;
+    texto = "\nTipo de ventanilla con codigo: " + codigo + "\ncon tiempo de espera de: ";
+    texto += to_string(horas) + string(" horas con ") + to_string(minutos) + 
+    string(" minutos y ") + to_string(segundos) + " segundos";
+    return texto;
  }
 

@@ -50,8 +50,7 @@ string Controlador::estadoColas(){
 
 bool Controlador::agregarTiquete(bool preferencial, string codigo){
     Servicios temp;
-    for(int i = 0; i<servicios->getSize(); i++){
-        servicios->goToPos(i);
+    for(servicios->goToStart();!servicios->atEnd(); servicios->next()){
         temp = servicios->getElement();
         if(temp.getId()==codigo){
             temp.agregarTiquete(preferencial);
@@ -88,15 +87,24 @@ bool Controlador::agregarVentana(string codigo, string descripcion, int cantidad
     return true;
 }
 
-bool Controlador::eliminarVentana(string codigo){
+int Controlador::eliminarVentana(string codigo){
+    Ventana *temp;
+    Servicios tempServicio;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
-        string codigoActual = ventanas->getElement()->getCodigo();
-        if(codigoActual==codigo){
+        temp = ventanas->getElement();
+        if(temp->getCodigo()==codigo){
+            for(servicios->goToStart();!servicios->atEnd();servicios->next()){
+                tempServicio = servicios->getElement();
+                if(tempServicio.getVentana()==temp) {
+                    return -1;
+                }
+            }
+            delete temp;
             ventanas->remove();
-            return true;
+            return 1;
         }
     }
-    return false;
+    return 0;
 }
 
 bool Controlador::agregarServicio(string descripcion, string id, string nombre, string codigo){
@@ -150,7 +158,16 @@ bool Controlador::moverServicio(string id, int pos){
     return false;
 }
 
-string Controlador::tiempoPromedio(){}
+string Controlador::tiempoPromedio(){
+    string texto = "\n------- Tiempos Promedios -------";
+    for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()) {
+        texto += ventanas->getElement()->getTiempoEspera();
+    }
+    if(texto == "\n------- Tiempos Promedios -------") {
+        return "No hay ventanas disponibles";
+    }
+    return texto;
+}
 
 string Controlador::dispensadosVentana(){
     string texto = "";
@@ -176,7 +193,7 @@ string Controlador::atendidosVentana(){
         texto+= to_string(temp->getTotalAtendidos())+". \n";
         total += temp->getTotalAtendidos();
     }
-    texto += "Para un total de tiquetes dispensados de: "+to_string(total);
+    texto += "Para un total de tiquetes atendidos de: "+to_string(total);
     return texto;
 }
 

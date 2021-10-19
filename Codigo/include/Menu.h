@@ -83,7 +83,7 @@ class Menu{
             servicios = obtenerString();
             bool tipo = false;
             cout<<"Coloque '1' para cliente preferencial o '0' para normal: ";
-            tipo = obtenerInt();
+            tipo = obtenerInt(); //revisar, porque si pone 2 seguro cae
             bool retorno = controlador.agregarTiquete(tipo, servicios);
             cout<<endl;
             if(retorno){
@@ -178,11 +178,14 @@ class Menu{
             cout<<"Digite el codigo de la Ventana: ";
             codigo = obtenerString();
             cout<<endl;
-            bool retorno = controlador.eliminarVentana(codigo);
-            if(retorno){
+            int retorno = controlador.eliminarVentana(codigo);
+            if(retorno == 1) {
                 cout<<"La ventana se elimino correctamente."<<endl;
-            }else{
+            }else if(retorno == 0) {
                 cout<<"No se encontro la ventana."<<endl;
+            }else if(retorno == -1) {
+                cout<<"La ventana pertenece a un servicio."<<
+                "\nHasta que la ventana no sea desocupada no puede eliminarse."<<endl;
             }
         }
 
