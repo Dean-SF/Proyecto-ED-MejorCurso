@@ -1,6 +1,6 @@
 //Creado por: Esteban Perez Picado
 //Fecha de creacion: 15/10/2021
-//Ultima modificacion: 18/10/2021
+//Ultima modificacion: 19/10/2021
 //Modificado por: Deyan Sanabria Fallas
 #include "Controlador.h"
 
@@ -15,9 +15,22 @@ Controlador::Controlador(){
 }
 
 /*
+Metodo privado para devolver la memoria de todos los punteros que maneja
+la lista de ventanas
+*/
+void Controlador::clearVentanas() {
+    Ventana *actual;
+    for(ventanas->goToStart(); ventanas->getSize() != 0;) {
+        actual = ventanas->remove();
+        delete actual;
+    }
+}
+
+/*
 Destructor del controlador que elimina los punteros de las dos listas.
 */
 Controlador::~Controlador(){
+    clearVentanas();
     delete ventanas;
     delete servicios;
 }
@@ -193,14 +206,18 @@ bool Controlador::eliminarServicio(string id){
 }
 
 /*
-Metodo que llama al swapElement de la lista para intercambiar los
-servicios segun la posicion dada y retorna un booleano.
+Metodo que mueve un servicio a otra posicion, esto lo hace haciendo remove()
+del servicio a la lista, y despues haciendo insert() del mismo en la posicion deseada
 */
 bool Controlador::moverServicio(string id, int pos){
+    Servicios actual;
     for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
-        string idActual = servicios->getElement().getId();
-        if(idActual==id){
-            return servicios->swapElement(servicios->getElement(), pos);
+        actual = servicios->getElement();
+        if(actual.getId()==id){
+            servicios->remove();
+            servicios->goToPos(pos);
+            servicios->insert(actual);
+            return true;
         }
     }
     return false;

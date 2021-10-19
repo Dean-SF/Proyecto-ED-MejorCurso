@@ -309,7 +309,7 @@ class Menu{
             if(retorno){
                 cout<<"El servicio se movio correctamente."<<endl;
             }else{
-                cout<<"No se encontro la ventana."<<endl;
+                cout<<"No se encontro el servicio."<<endl;
             }
         }
 

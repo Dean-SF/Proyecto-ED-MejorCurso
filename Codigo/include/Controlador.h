@@ -1,6 +1,6 @@
 //Creado por: Esteban Perez Picado
 //Fecha de creacion: 15/10/2021
-//Ultima modificacion: 18/10/2021
+//Ultima modificacion: 19/10/2021
 //Modificado por: Deyan Sanabria Fallas
 #ifndef CONTROLADOR_H
 #define CONTROLADOR_H
@@ -19,11 +19,11 @@ metodos para realizar la funcionalidad deseada en el menu.
 */
 class Controlador{
     private:
-        LinkedList<Ventana*> *ventanas;
-        LinkedList<Servicios> *servicios;
+        List<Ventana*> *ventanas;
+        List<Servicios> *servicios;
         int totalTiquetes;
         int totalPreferenciales;
-
+        void clearVentanas();
     public:
         Controlador();
         ~Controlador();
