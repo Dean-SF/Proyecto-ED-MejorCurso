@@ -1,7 +1,5 @@
 //Creado por: Mauricio Aviles Cisneros
-//Fecha de creacion: 15/10/2021
-//Ultima modificacion: 18/10/2021
-//Modificado por: Deyan Sanabria Fallas y Esteban Perez Picado
+//Modificado por: Deyan Sanabria Fallas
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include "List.h"

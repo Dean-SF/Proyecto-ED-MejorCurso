@@ -4,15 +4,15 @@
 	"Controlador.h"
 	"Menu.h"
 
-1634671748 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+1634672768 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
 	"Servicios.h"
 
-1634620071 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
+1634672768 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\servicios.h
 	<iostream>
 	<string.h>
 	"Ventana.h"
 
-1634615768 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634672768 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
@@ -31,27 +31,27 @@
 1634565271 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
 	"Tiquete.h"
 
-1634340394 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\list.h
+1634673834 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\list.h
 
-1634338661 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\arraylist.h
+1634673875 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\arraylist.h
 	"List.h"
 	<iostream>
 	<stdexcept>
 
-1634424253 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\queue.h
+1634673985 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\queue.h
 
-1634424253 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
+1634673783 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
 	"Queue.h"
 	"Node.h"
 	<stdexcept>
 	<iostream>
 
-1634336126 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\node.h
+1634673971 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\node.h
 
-1634592366 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
+1634672926 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
 	"Tiquete.h"
 
-1634615768 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
+1634673586 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
 1634619551 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
@@ -65,7 +65,7 @@
 	"Ventana.h"
 	"Servicios.h"
 
-1634619798 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
+1634673884 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
 	"List.h"
 	"Node.h"
 	<iostream>
@@ -140,7 +140,7 @@
 1634418553 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\ventana.cpp
 	"Ventana.h"
 
-1634565271 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventanilla.cpp
+1634673065 source:c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\src\ventanilla.cpp
 	"Ventanilla.h"
 
 1634672432 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\menu.h

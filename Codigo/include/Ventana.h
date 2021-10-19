@@ -1,3 +1,6 @@
+//Creado por: Deyan Sanabria Fallas
+//Modificado por: Esteban Perez Picado
+
 #ifndef VENTANA_H
 #define VENTANA_H
 #include <iostream>
@@ -13,6 +16,9 @@
 
 using std::string;
 
+/*
+Clase de ventana que permite la creacion de tiquetes, servicios y las ventanilas dentro de esta.
+*/
 class Ventana {
     private:
         int tiquetesDispensados;

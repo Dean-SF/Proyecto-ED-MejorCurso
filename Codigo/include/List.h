@@ -1,3 +1,5 @@
+//Creado por: Mauricio Aviles Cisneros
+//Modificado por: Deyan Sanabria Fallas
 #ifndef LIST_H
 #define LIST_H
 
@@ -5,7 +7,7 @@ template <typename E>
 class List {
 private:
     void operator =(const List&) {}
-    List(const List&) {} 
+    List(const List&) {}
 public:
     List() {}
     virtual ~List() {}

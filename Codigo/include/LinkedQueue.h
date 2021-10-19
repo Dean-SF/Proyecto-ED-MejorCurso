@@ -1,3 +1,5 @@
+//Creado por: Mauricio Aviles Cisneros
+//Modificado por: Deyan Sanabria Fallas y Esteban Perez Picado
 #ifndef LINKEDQUEUE_H
 #define LINKEDQUEUE_H
 
@@ -142,7 +144,9 @@ public:
         cout << " ]" << endl;
     }*/
 
-
+    /*
+    Metodo que convierte todos los datos de la cola en una lista y los retorna.
+    */
     ArrayList<E> *toList(){
         Node<E> *current = front;
         ArrayList<E> *lista = new ArrayList<E>();

@@ -1,3 +1,5 @@
+//Creado por: Mauricio Aviles Cisneros
+//Modificado por: Deyan Sanabria Fallas
 #ifndef ARRAYLIST_H
 #define ARRAYLIST_H
 #include "List.h"
@@ -35,7 +37,7 @@ private:
         if(pos == size) {
             throw runtime_error("Error: No current element");
         }
-            
+
     }
 
     /*
@@ -46,7 +48,7 @@ private:
         max *= 2;                           // se dup;ica el tamaño
         E *temp = new E[max];               // se crea array temporal con el doble tamaño
         for(int i = 0; i < size; i++) {     // se copian los elementos de un array a otro
-            temp[i] = elements[i];          
+            temp[i] = elements[i];
         }
         delete [] elements;                 // se borra el array viejo y se reemplaza con el nuevo
         elements = temp;
@@ -149,7 +151,7 @@ public:
     */
     void next() {
         if(pos < size)
-            pos++; 
+            pos++;
     }
 
     /*
@@ -212,12 +214,12 @@ public:
     */
     int indexOf(E element) {
         int oldPos = pos;                           // Se guarda la posicion actual de la lista.
-        int temp;                           
-        for(goToStart(); !atEnd(); next()) {        // Con un ciclo se recorre la lista 
+        int temp;
+        for(goToStart(); !atEnd(); next()) {        // Con un ciclo se recorre la lista
             if(getElement()==element) {             // y revisa si existe el elemento.
                 temp = pos;                         // se guarda la posicion a retornar de forma temporal
                 pos = oldPos;                       // Se recupera la posicion en la que estaba la lista
-                return temp;                        // para dejarla sin alterar. 
+                return temp;                        // para dejarla sin alterar.
             }
         }
         pos = oldPos;                               // Se recupera la posicion en la que estaba la lista en caso
@@ -238,7 +240,7 @@ public:
     */
     void extend(List<E> *L) {
         int oldPos = L->getPos();
-        for(L->goToStart(); !L->atEnd(); L->next()) {   // recorre todos los elementos de la lista entrante 
+        for(L->goToStart(); !L->atEnd(); L->next()) {   // recorre todos los elementos de la lista entrante
             this->append(L->getElement());              // y le hace append a cada elemento
         }
         L->goToPos(oldPos);                             // se devuelve la posicion que tenia antes de alterarla
