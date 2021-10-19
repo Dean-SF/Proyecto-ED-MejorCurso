@@ -1,3 +1,5 @@
+//Creado por: Mauricio Aviles Cisneros
+//Modificado por: Deyan Sanabria Fallas y Esteban Perez Picado
 #ifndef QUEUE_H
 #define QUEUE_H
 
