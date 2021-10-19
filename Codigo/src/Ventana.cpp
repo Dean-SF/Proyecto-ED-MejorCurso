@@ -200,7 +200,7 @@ int Ventana::getTotalAtendidos(){
     return totalAtendidos;
  }
 
- //get del total de tiempo de espera de todos los tiquetes
+//get del total de tiempo de espera de todos los tiquetes
 string Ventana::getTiempoEspera() {
     string texto;
     int segundos = 0;

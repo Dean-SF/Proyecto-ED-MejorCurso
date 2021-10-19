@@ -27,6 +27,7 @@ class Controlador{
     public:
         Controlador();
         ~Controlador();
+        int getCantidadServicios();
         string estadoColas();
         bool agregarTiquete(bool preferencial, string codigo);
         string atender(string codigoVentana, int numVentanilla);

@@ -1,6 +1,6 @@
 //Creado por: Esteban Perez Picado
 //Fecha de creacion: 18/10/2021
-//Ultima modificacion: 18/10/2021
+//Ultima modificacion: 19 q/10/2021
 //Modificado por: Deyan Sanabria Fallas
 #ifndef MENU_H
 #define MENU_H
@@ -52,7 +52,7 @@ class Menu{
             do{
                 cout<<endl<<"--Menu principal--"<<endl;
                 cout<<"1 -Estado de las colas."<<endl<<"2 -Solicitar Tiquete."<<endl;
-                cout<<"3 -Atender."<<endl<<"4 -Andministracion."<<endl;
+                cout<<"3 -Atender."<<endl<<"4 -Administracion."<<endl;
                 cout<<"5 -Estadisticas."<<endl<<"0 -Salir."<<endl;
                 cout<<endl<<"Digite el numero con la opcion deseada: ";
                 menuNumero = obtenerInt();
@@ -305,6 +305,10 @@ class Menu{
             cout<<"Digite la nueva posicion del servicio: ";
             pos = obtenerInt();
             cout<<endl;
+            if(controlador.getCantidadServicios() <= pos) {
+                cout<<"No existen tantas posiciones."<<endl;
+                return;
+            }
             bool retorno = controlador.moverServicio(codigo,pos);
             if(retorno){
                 cout<<"El servicio se movio correctamente."<<endl;

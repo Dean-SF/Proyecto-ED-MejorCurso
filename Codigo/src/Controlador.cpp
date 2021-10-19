@@ -36,6 +36,14 @@ Controlador::~Controlador(){
 }
 
 /*
+Metodo para saber la cantidad de servicios que hay en la lista
+de servicios
+*/
+int Controlador::getCantidadServicios() {
+    return servicios->getSize();
+}
+
+/*
 Metodo que muestra el estado de las colas y retorna un string con los diferentes datos de todas las
 colas actuales en el programa, el string contiene el nombre, la id
 la cantidad de ventanillas y sus dos colas respectivas.
