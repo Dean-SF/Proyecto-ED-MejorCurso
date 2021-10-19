@@ -251,6 +251,15 @@ public:
         return true;
 
     }
+
+    bool swapElement(E element, int pos){
+        if(pos==size||size<=1)
+            return false;
+        int oldPos = indexOf(element);
+        if(oldPos==-1)
+            return false;
+    }
+
 };
 
 

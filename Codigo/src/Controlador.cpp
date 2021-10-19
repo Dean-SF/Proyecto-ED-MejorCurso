@@ -28,19 +28,19 @@ string Controlador::estadoColas(){
         texto += "\n Cola regular: ";
         for(colaNormal->goToStart(); !colaNormal->atEnd(); colaNormal->next()){
             texto += colaNormal->getElement().getCodigo();
-            if(colaNormal->getPos()!=colaNormal->getSize()){
+            if(colaNormal->getPos()!=colaNormal->getSize()-1){
                 texto+=",";
             }else{
-                texto+=". \n";
+                texto+=".";
             }
         }
         texto += "\n Cola de prioridad: ";
         for(colaPrioridad->goToStart(); !colaPrioridad->atEnd(); colaPrioridad->next()){
             texto += colaPrioridad->getElement().getCodigo();
-            if(colaPrioridad->getPos()!=colaPrioridad->getSize()){
+            if(colaPrioridad->getPos()!=colaPrioridad->getSize()-1){
                 texto+=",";
             }else{
-                texto+=". \n";
+                texto+=".";
             }
         }
         texto+="\n ";
@@ -62,7 +62,6 @@ bool Controlador::agregarTiquete(bool preferencial, string codigo){
             return true;
         }
     }
-
     return false;
 }
 
@@ -125,7 +124,7 @@ string Controlador::mostrarServicios(){
     for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
         id = servicios->getElement().getId();
         nombre = servicios->getElement().getNombre();
-        texto += "-"+id+", "+nombre+". \n";
+        texto += "-"+id+", "+nombre+"("+servicios->getElement().getDescripcion()+"). \n";
     }
     return texto;
 }
@@ -142,7 +141,12 @@ bool Controlador::eliminarServicio(string id){
 }
 
 bool Controlador::moverServicio(string id, int pos){
-    //ahacer un swap : D
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        string idActual = servicios->getElement().getId();
+        if(idActual==id){
+            return servicios->swapElement(servicios->getElement(), pos);
+        }
+    }
     return false;
 }
 

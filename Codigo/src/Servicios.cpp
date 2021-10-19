@@ -48,3 +48,7 @@ void Servicios::agregarTiquete(bool tipo){
 int Servicios::getCantidadDispensada(){
     return cantidadDispensada;
 }
+
+string Servicios::getDescripcion(){
+    return descripcion;
+}

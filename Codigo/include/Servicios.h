@@ -26,6 +26,7 @@ class Servicios {
         Ventana* getVentana();
         void agregarTiquete(bool tipo);
         int getCantidadDispensada();
+        string getDescripcion();
 
         bool operator!=(const Servicios& other){
             return this->id != other.id;

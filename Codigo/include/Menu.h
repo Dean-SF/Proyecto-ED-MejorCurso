@@ -262,7 +262,7 @@ class Menu{
             cout<<endl;
             bool retorno = controlador.moverServicio(codigo,pos);
             if(retorno){
-                cout<<"La ventana se elimino correctamente."<<endl;
+                cout<<"El servicio se movio correctamente."<<endl;
             }else{
                 cout<<"No se encontro la ventana."<<endl;
             }

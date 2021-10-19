@@ -9,7 +9,7 @@ int main()
     Menu menu = Menu();
     menu.menuPrincipal();
     //cout << "MUY BUENAS AL MEJOR CURSO DE ESTE PLANETA!!!" << endl;
-    Controlador controlador = Controlador();
+    /*Controlador controlador = Controlador();
     cout<<controlador.eliminarVentana("c1")<<endl;
     cout<<controlador.agregarVentana("C","Consulta",5)<<endl;
     cout<<controlador.agregarVentana("I","Iiiii",5)<<endl;
@@ -23,12 +23,14 @@ int main()
 
     cout<<controlador.agregarTiquete(false , "P")<<endl;
     cout<<controlador.agregarTiquete(false , "P")<<endl;
+    cout<<controlador.agregarTiquete(false , "A")<<endl;
     cout<<controlador.agregarTiquete(false , "P")<<endl;
-    cout<<controlador.agregarTiquete(false , "P")<<endl;
-    cout<<controlador.agregarTiquete(true , "P")<<endl;
+    cout<<controlador.agregarTiquete(true , "Z")<<endl;
     cout<<controlador.agregarTiquete(true , "P")<<endl;
 
-    /*int menuNumero = -1;
+    cout<<controlador.estadoColas()<<endl;
+
+    int menuNumero = -1;
     do{
         cout<<endl<<"--Menu principal--"<<endl;
         cout<<"1 -Estado de las colas."<<endl<<"2 -Solicitar Tiquete."<<endl;

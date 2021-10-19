@@ -129,7 +129,7 @@ int Ventana::getCantidadVentanillas(){
 
 void Ventana::agregarTiquete(bool esPrioritaria){
     string texto = codigo;
-    texto += cantidadVentanillas;
+    texto += to_string(cantidadVentanillas);
     Tiquete nuevo = Tiquete(texto);
     if(esPrioritaria){
         colaPrioritaria->enqueue(nuevo);
