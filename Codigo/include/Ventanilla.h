@@ -16,7 +16,7 @@ class Ventanilla{
         Ventanilla();
         ~Ventanilla();
         Tiquete *getAtendiendo();
-        void setAtendiendo(Tiquete &atentiendo);
+        void setAtendiendo(Tiquete *atentiendo);
         int getNumero();
         void setNumero(int numero);
         int getAtendidos();

@@ -51,8 +51,8 @@ la cantidad de ventanillas y sus dos colas respectivas.
 string Controlador::estadoColas(){
     string texto = "--Estado de las colas-- \n";
     Ventana *temp;
-    ArrayList<Tiquete> *colaNormal;
-    ArrayList<Tiquete> *colaPrioridad;
+    ArrayList<Tiquete*> *colaNormal;
+    ArrayList<Tiquete*> *colaPrioridad;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp = ventanas->getElement();
         texto+="\n --";
@@ -63,7 +63,7 @@ string Controlador::estadoColas(){
         colaPrioridad = temp->getcolaPrioritaria()->toList();
         texto += "\n Cola regular: ";
         for(colaNormal->goToStart(); !colaNormal->atEnd(); colaNormal->next()){
-            texto += colaNormal->getElement().getCodigo();
+            texto += colaNormal->getElement()->getCodigo();
             if(colaNormal->getPos()!=colaNormal->getSize()-1){
                 texto+=",";
             }else{
@@ -72,7 +72,7 @@ string Controlador::estadoColas(){
         }
         texto += "\n Cola de prioridad: ";
         for(colaPrioridad->goToStart(); !colaPrioridad->atEnd(); colaPrioridad->next()){
-            texto += colaPrioridad->getElement().getCodigo();
+            texto += colaPrioridad->getElement()->getCodigo();
             if(colaPrioridad->getPos()!=colaPrioridad->getSize()-1){
                 texto+=",";
             }else{
@@ -111,6 +111,7 @@ ademas llama a atender de Ventana.
 */
 string Controlador::atender(string codigoVentana, int numVentanilla){
     Ventana *temp;
+    numVentanilla -= 1;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp=ventanas->getElement();
         if(codigoVentana==temp->getCodigo()){
