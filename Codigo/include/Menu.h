@@ -13,23 +13,30 @@ class Menu{
         Controlador controlador = Controlador();
         bool UltimaVezInt = false;
 
+        /*
+        Metodo de entrada que pregunta a el usuario un numero hasta que lo introduzca,
+        si este no es un numero pregunta por el de nuevo
+        */
         int obtenerInt() {
             int retorno;
             cin >> retorno;
-            while (!cin.good()){
-                cout << "ERROR VUELVA A INTENTARLO" << endl;
-                cin.clear();
-                cin.ignore(INT_MAX,'\n');
+            while (!cin.good()){ // Verifica que la operacion se hizo de forma exitosa
+                cout << "ERROR: SOLO SE PERMITEN NUMEROS" << endl;
+                cin.clear();                // limpia la bandera de error
+                cin.ignore(INT_MAX,'\n');   // limpia de caracteres la entrada
                 cin >> retorno;
             }
-            UltimaVezInt = true;
-            return retorno;
-        }
+            UltimaVezInt = true; // Cuando do se usa CIN para un numero y despues
+            return retorno;      // para el getline, hay que limpiar con ignore,
+        }                        // para ello esta el booleano
 
+        /*
+        Metodo de entrada para leer un string del usuario
+        */
         string obtenerString(){
-            if(UltimaVezInt){
-                cin.ignore(INT_MAX,'\n');
-                UltimaVezInt = false;
+            if(UltimaVezInt){ // Si se leyo un numero la ultima vez
+                cin.ignore(INT_MAX,'\n'); // se limpia el input buffer
+                UltimaVezInt = false; // y se de vuelve el booleano a falso
             }
             string retorno;
             getline(cin,retorno);
@@ -96,9 +103,12 @@ class Menu{
             cout<<servicios<<endl;
             cout<<"Digite el codigo del servicio que va a utilizar: ";
             servicios = obtenerString();
-            bool tipo = false;
-            cout<<"Coloque '1' para cliente preferencial o '0' para normal: ";
-            tipo = obtenerInt(); //revisar, porque si pone 2 seguro cae
+            int tipo = 0;
+            do {
+                cout<<"Coloque '1' para cliente preferencial o '0' para normal: ";
+                tipo = obtenerInt();
+            } while (tipo != 0 && tipo != 1);
+            
             bool retorno = controlador.agregarTiquete(tipo, servicios);
             cout<<endl;
             if(retorno){

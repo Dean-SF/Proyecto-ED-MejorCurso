@@ -129,22 +129,6 @@ public:
     }
 
     /*
-    Metodo print: Imprime los elementos de la cola
-    */
-    /*void print() {
-        Node<E> *current = front;
-        cout << "[ ";
-        while (current->next != nullptr) {
-            current = current->next;
-            cout << current->element;
-            if(current->next == nullptr)
-                continue;
-            cout << ", ";
-        }
-        cout << " ]" << endl;
-    }*/
-
-    /*
     Metodo que convierte todos los datos de la cola en una lista y los retorna.
     */
     ArrayList<E> *toList(){

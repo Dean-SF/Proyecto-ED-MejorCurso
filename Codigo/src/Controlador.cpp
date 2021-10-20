@@ -21,8 +21,8 @@ la lista de ventanas
 void Controlador::clearVentanas() {
     Ventana *actual;
     for(ventanas->goToStart(); ventanas->getSize() != 0;) {
-        actual = ventanas->remove();
-        delete actual;
+        actual = ventanas->remove(); // se obtiene cada uno de los elementos de la lista y
+        delete actual;               // se remueven y se les ejecuta el delete
     }
 }
 
@@ -30,8 +30,8 @@ void Controlador::clearVentanas() {
 Destructor del controlador que elimina los punteros de las dos listas.
 */
 Controlador::~Controlador(){
-    clearVentanas();
-    delete ventanas;
+    clearVentanas(); // una vez retornada la memoria al sistema
+    delete ventanas; // se puede borrar la lista
     delete servicios;
 }
 

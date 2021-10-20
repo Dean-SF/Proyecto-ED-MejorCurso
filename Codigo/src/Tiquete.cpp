@@ -7,7 +7,7 @@ Tiquete::Tiquete(string codigo) {
     this->codigo = codigo;
 }
 
-//Contructor vacio
+//Contructor default
 Tiquete::Tiquete(){
     codigo = "N/A";
     tiempo_creacion = 0;
@@ -19,14 +19,14 @@ Tiquete::Tiquete(const Tiquete &other){
     this->tiempo_creacion = other.tiempo_creacion;
 }
 
-//Sobrecarga del operador de asignacion
+//Sobreescritura del operador de asignacion
 void Tiquete::operator=(const Tiquete &other) {
     this->codigo = other.codigo;
     this->tiempo_creacion = other.tiempo_creacion;
 }
 
 // Setters y getters:
-//get del codigo
+// get del codigo
 string Tiquete::getCodigo() {
     return codigo;
 }

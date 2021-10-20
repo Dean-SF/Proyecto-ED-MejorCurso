@@ -17,6 +17,7 @@
 using std::string;
 
 /*
+Clase creada por Deyan Sanabria Fallas
 Clase de ventana que permite la creacion de tiquetes, servicios y las ventanilas dentro de esta.
 */
 class Ventana {

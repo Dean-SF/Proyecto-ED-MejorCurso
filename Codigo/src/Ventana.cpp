@@ -1,7 +1,7 @@
 #include "Ventana.h"
 //Creado por: Deyan Sanabria Fallas
 
-//Contructor completo de Ventana con todos sus datos,
+//Contructor de Ventana 
 Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     tiquetesDispensados = 0;
     totalAtendidos = 0;
@@ -20,34 +20,40 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     }
 }
 
-//Contructor vaicio de ventana
+//Contructor default de ventana
 Ventana::Ventana(){
-    colaRegular = nullptr;
-    colaPrioritaria = nullptr;
+    colaRegular = nullptr;      // inicializar punteros para
+    colaPrioritaria = nullptr;  // evitar errores
     ventanillas = nullptr;
 }
 
 //Destructor de Ventana que limpia todos los punteros
 Ventana::~Ventana() {
-    delete colaRegular;
+    delete colaRegular;     // borrar todo lo que contienen los punteros
     delete colaPrioritaria;
     delete ventanillas;
+    delete tiemposEspera;
 }
 
 //Constructor de copia de Ventana
 Ventana::Ventana(const Ventana &other) {
-    List<Ventanilla> *ventanillasCopia = other.ventanillas;
-    List<Tiquete> *regularCopia = other.colaRegular->toList();
-    List<Tiquete> *prioritariaCopia = other.colaRegular->toList();
-
-    this->tiquetesDispensados = other.tiquetesDispensados;
+    List<Ventanilla> *ventanillasCopia = other.ventanillas;     // Copias de en lista de los atributos de la otra ventana
+    List<Tiquete> *regularCopia = other.colaRegular->toList();  // todo para no poner cosas como "other.colaRegular->goToStart()".
+    List<Tiquete> *prioritariaCopia = other.colaRegular->toList(); // Las colas son mas faciles copiarlas manejandolas como listas
+    List<double> *tiemposCopia = other.tiemposEspera;
+    
+    // copia de parametros
+    this->tiquetesDispensados = other.tiquetesDispensados; 
     this->codigo = other.codigo;
     this->descripcion = other.descripcion;
     this->cantidadVentanillas = other.cantidadVentanillas;
 
-    colaRegular = new LinkedQueue<Tiquete>();
+    colaRegular = new LinkedQueue<Tiquete>();       // Nueva memoria para iniciar los punteros
     colaPrioritaria = new LinkedQueue<Tiquete>();
     ventanillas = new ArrayList<Ventanilla>(other.ventanillas->getSize());
+    tiemposEspera = new LinkedList<double>();
+
+    // Se copian los datos de las estructuras de datos (listas y colas)
     for(ventanillasCopia->goToStart();!ventanillasCopia->atEnd();ventanillasCopia->next()) {
         ventanillas->append(ventanillasCopia->getElement());
     }
@@ -57,14 +63,20 @@ Ventana::Ventana(const Ventana &other) {
     for(prioritariaCopia->goToStart();!prioritariaCopia->atEnd();prioritariaCopia->next()) {
         colaPrioritaria->enqueue(prioritariaCopia->getElement());
     }
+    for(tiemposCopia->goToStart(); !tiemposCopia->atEnd(); tiemposCopia->next()) {
+        tiemposEspera->append(tiemposCopia->getElement());
+    }
+
 }
 
-//Sobrecarga del operador de igualdad
+//Sobreescritura del operador de igualdad
 void Ventana::operator=(const Ventana &other){
+    // lo mismo que el constructor de copia pero pasando el destructor antes
     this->~Ventana();
-    List<Ventanilla> *ventanillasCopia = other.ventanillas;
+    List<Ventanilla> *ventanillasCopia = other.ventanillas; 
     List<Tiquete> *regularCopia = other.colaRegular->toList();
     List<Tiquete> *prioritariaCopia = other.colaRegular->toList();
+    List<double> *tiemposCopia = other.tiemposEspera;
 
     this->tiquetesDispensados = other.tiquetesDispensados;
     this->codigo = other.codigo;
@@ -75,6 +87,8 @@ void Ventana::operator=(const Ventana &other){
     colaRegular = new LinkedQueue<Tiquete>();
     colaPrioritaria = new LinkedQueue<Tiquete>();
     ventanillas = new ArrayList<Ventanilla>(other.ventanillas->getSize());
+    tiemposEspera = new LinkedList<double>();
+
     for(ventanillasCopia->goToStart();!ventanillasCopia->atEnd();ventanillasCopia->next()) {
         ventanillas->append(ventanillasCopia->getElement());
     }
@@ -83,6 +97,9 @@ void Ventana::operator=(const Ventana &other){
     }
     for(prioritariaCopia->goToStart();!prioritariaCopia->atEnd();prioritariaCopia->next()) {
         colaPrioritaria->enqueue(prioritariaCopia->getElement());
+    }
+    for(tiemposCopia->goToStart(); !tiemposCopia->atEnd(); tiemposCopia->next()) {
+        tiemposEspera->append(tiemposCopia->getElement());
     }
 }
 
@@ -160,13 +177,13 @@ void Ventana::agregarTiquete(bool esPrioritaria){
     tiquetesDispensados+=1;
 }
 
-//Metodo que tomma un tiquete le saca la hora de creacion la compara con la actual y saca el tiempo de espera y lo suma
+//Metodo que calcula el tiempo de espera del tiquete de entrada
 void Ventana::agregarTiempoEspera(Tiquete tiquete) {
-    time_t tiempoCreacion = tiquete.getTiempoCreacion();
-    time_t tiempoActual;
+    time_t tiempoCreacion = tiquete.getTiempoCreacion(); // se obtiene el tiempo de creacion
+    time_t tiempoActual;                                 // y el tiempo actual
     time(&tiempoActual);
-    double tiempoEspera = difftime(tiempoActual,tiempoCreacion);
-    tiemposEspera->append(tiempoEspera);
+    double tiempoEspera = difftime(tiempoActual,tiempoCreacion); // Se saca la diferencia entre las dos y
+    tiemposEspera->append(tiempoEspera);                         // con ello se obtiene lo que se tardo en atender
 }
 
 //Metodo que atiende o hace dequeue a un tiquete si cumple los requisitos
@@ -207,9 +224,9 @@ string Ventana::getTiempoEspera() {
     int minutos = 0;
     int horas = 0;
     for(tiemposEspera->goToStart(); !tiemposEspera->atEnd(); tiemposEspera->next())
-        segundos += tiemposEspera->getElement();
+        segundos += tiemposEspera->getElement(); // se suman los segundos que se tardaba por tiquete atendido
     if(tiemposEspera->getSize() != 0)
-        segundos = segundos/tiemposEspera->getSize();
+        segundos = segundos/tiemposEspera->getSize(); // se divide entre la cantidad de tiquetes atendidos
     horas = segundos/3600;
     segundos = segundos%60;
     minutos = segundos/60;

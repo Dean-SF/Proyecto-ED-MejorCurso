@@ -181,24 +181,6 @@ public:
     }
 
     /*
-<<<<<<< Updated upstream
-=======
-    metodo print:
-    Imprime la lista
-    */
-
-    /*void print() {
-        Node<E> *oldCurrent = current;
-        cout << "[ ";
-        for(goToStart(); !atEnd(); next()) {
-            cout << getElement() << " ";
-        }
-        cout << "]" << endl;
-        current = oldCurrent;
-    }*/
-
-    /*
->>>>>>> Stashed changes
     metodo indexOf:
     retorna el indice de un elemento dado, si no existe, retorna -1
     */

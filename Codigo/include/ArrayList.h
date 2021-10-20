@@ -196,19 +196,6 @@ public:
     }
 
     /*
-    metodo print:
-    Imprime la lista
-    */
-    void print() {
-        int oldPos = pos;
-        cout << "[ ";
-        for(goToStart(); !atEnd(); next()) {
-            cout << getElement() << " ";
-        }
-        cout << "]" << endl;
-        pos = oldPos;
-    }
-    /*
     metodo indexOf:
     retorna el indice de un elemento dado, si no existe, retorna -1
     */
