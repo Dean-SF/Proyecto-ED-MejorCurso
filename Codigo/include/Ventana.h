@@ -23,15 +23,16 @@ Clase de ventana que permite la creacion de tiquetes, servicios y las ventanilas
 class Ventana {
     private:
         int tiquetesDispensados;
-        int cantidadVentanillas;
         int totalAtendidos;
         string codigo;
         string descripcion;
-        Queue<Tiquete> *colaRegular;
-        Queue<Tiquete> *colaPrioritaria;
-        List<Ventanilla> *ventanillas;
+        Queue<Tiquete*> *colaRegular;
+        Queue<Tiquete*> *colaPrioritaria;
+        List<Ventanilla*> *ventanillas;
         List<double> *tiemposEspera;
-        void agregarTiempoEspera(Tiquete tiquete);
+        void agregarTiempoEspera(Tiquete *tiquete);
+        void clearPunteros();
+        void borrarTiqueteAnterior(Ventanilla *ventanilla);
     public:
         Ventana(string codigo, string descripcion, int cantidad);
         Ventana(const Ventana& other);
@@ -40,11 +41,12 @@ class Ventana {
         void operator=(const Ventana& other);
         string getCodigo();
         string getDescripcion();
-        List<Ventanilla> *getVentanillas();
-        Queue<Tiquete> *getColaRegular();
-        Queue<Tiquete> *getcolaPrioritaria();
+        List<Ventanilla*> *getVentanillas();
+        Queue<Tiquete*> *getColaRegular();
+        Queue<Tiquete*> *getcolaPrioritaria();
         int getTiquetesDispensados();
-        Ventanilla getVentanilla(int numero);
+        Ventanilla *getVentanilla(int numero);
+        string getEstado();
         void setCodigo(string codigo);
         void setDescripcion(string descripcion);
         bool operator==(const Ventana &other);

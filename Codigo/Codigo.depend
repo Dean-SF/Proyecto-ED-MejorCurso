@@ -71,13 +71,15 @@
 	<iostream>
 	<stdexcept>
 
-1634338157 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\main.cpp
+1634692991 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\main.cpp
 	<iostream>
+	"Controlador.h"
+	"Menu.h"
 
 1634417006 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\controlador.cpp
 	"Controlador.h"
 
-1634417006 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\controlador.h
+1634674987 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\controlador.h
 	<iostream>
 	<string.h>
 	<time.h>
@@ -85,53 +87,54 @@
 	"Ventana.h"
 	"Servicios.h"
 
-1634417006 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
+1634694836 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedlist.h
 	"List.h"
 	"Node.h"
 	<iostream>
 	<stdexcept>
 
-1634339742 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\list.h
+1634693249 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\list.h
 
-1631030950 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\node.h
+1634674540 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\node.h
 
-1634418806 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventana.h
+1634764346 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventana.h
 	<iostream>
 	<string.h>
 	"Tiquete.h"
 	"Ventanilla.h"
 	"List.h"
 	"ArrayList.h"
+	"LinkedList.h"
 	"Queue.h"
 	"LinkedQueue.h"
 
-1634418381 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\tiquete.h
+1634577736 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\tiquete.h
 	<iostream>
 	<string.h>
 	<time.h>
 
-1634343664 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
+1634763142 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\ventanilla.h
 	"Tiquete.h"
 
-1631066027 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\arraylist.h
+1634693279 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\arraylist.h
 	"List.h"
 	<iostream>
 	<stdexcept>
 
-1634418381 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\queue.h
+1634693251 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\queue.h
 
-1634418381 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
+1634693310 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\linkedqueue.h
 	"Queue.h"
 	"Node.h"
 	<stdexcept>
 	<iostream>
 
-1634417006 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\servicios.h
+1634674540 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\servicios.h
 	<iostream>
 	<string.h>
 	"Ventana.h"
 
-1634339707 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
+1634674540 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\servicios.cpp
 	"Servicios.h"
 
 1634418381 source:c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\src\tiquete.cpp
@@ -144,4 +147,6 @@
 	"Ventanilla.h"
 
 1634672432 c:\users\esteban\desktop\nbproyects\proyecto-ed-mejorcurso\codigo\include\menu.h
+
+1634692890 c:\users\deansf\documents\github\proyecto-ed-mejorcurso\codigo\include\menu.h
 

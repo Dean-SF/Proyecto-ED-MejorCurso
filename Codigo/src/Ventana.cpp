@@ -7,15 +7,14 @@ Ventana::Ventana(string codigo, string descripcion, int cantidad) {
     totalAtendidos = 0;
     this->codigo = codigo;
     this->descripcion = descripcion;
-    this->cantidadVentanillas = cantidad;
-    colaRegular = new LinkedQueue<Tiquete>();
-    colaPrioritaria = new LinkedQueue<Tiquete>();
-    ventanillas = new ArrayList<Ventanilla>(cantidad);
+    colaRegular = new LinkedQueue<Tiquete*>();
+    colaPrioritaria = new LinkedQueue<Tiquete*>();
+    ventanillas = new ArrayList<Ventanilla*>(cantidad);
     tiemposEspera = new LinkedList<double>();
-    Ventanilla nuevo;
+    Ventanilla *nuevo;
     for(int i = 0; i<cantidad; i++){
-        nuevo = Ventanilla();
-        nuevo.setNumero(i);
+        nuevo = new Ventanilla();
+        nuevo->setNumero(i + 1);
         ventanillas->append(nuevo);
     }
 }
@@ -27,8 +26,27 @@ Ventana::Ventana(){
     ventanillas = nullptr;
 }
 
+// Metodo para borrar el contenido de los punteros de la cola
+void Ventana::clearPunteros() {
+    Tiquete *temp;  // Temporal
+    while (!colaRegular->isEmpty()) { // Se sacan todos los elementos
+        temp = colaRegular->dequeue();
+        delete temp;                    // y se retorna la memoria
+    }
+    while (!colaPrioritaria->isEmpty()) {
+        temp = colaPrioritaria->dequeue();
+        delete temp;
+    }
+    Ventanilla *tempV;
+    for(ventanillas->goToStart(); !ventanillas->atEnd(); ventanillas->next()) {
+        tempV = ventanillas->getElement();
+        delete tempV;
+    }
+}
+
 //Destructor de Ventana que limpia todos los punteros
 Ventana::~Ventana() {
+    clearPunteros();        // Se borrar todos los punteros dentro de la cola
     delete colaRegular;     // borrar todo lo que contienen los punteros
     delete colaPrioritaria;
     delete ventanillas;
@@ -37,20 +55,19 @@ Ventana::~Ventana() {
 
 //Constructor de copia de Ventana
 Ventana::Ventana(const Ventana &other) {
-    List<Ventanilla> *ventanillasCopia = other.ventanillas;     // Copias de en lista de los atributos de la otra ventana
-    List<Tiquete> *regularCopia = other.colaRegular->toList();  // todo para no poner cosas como "other.colaRegular->goToStart()".
-    List<Tiquete> *prioritariaCopia = other.colaRegular->toList(); // Las colas son mas faciles copiarlas manejandolas como listas
+    List<Ventanilla*> *ventanillasCopia = other.ventanillas;     // Copias de en lista de los atributos de la otra ventana
+    List<Tiquete*> *regularCopia = other.colaRegular->toList();  // todo para no poner cosas como "other.colaRegular->goToStart()".
+    List<Tiquete*> *prioritariaCopia = other.colaRegular->toList(); // Las colas son mas faciles copiarlas manejandolas como listas
     List<double> *tiemposCopia = other.tiemposEspera;
     
     // copia de parametros
     this->tiquetesDispensados = other.tiquetesDispensados; 
     this->codigo = other.codigo;
     this->descripcion = other.descripcion;
-    this->cantidadVentanillas = other.cantidadVentanillas;
 
-    colaRegular = new LinkedQueue<Tiquete>();       // Nueva memoria para iniciar los punteros
-    colaPrioritaria = new LinkedQueue<Tiquete>();
-    ventanillas = new ArrayList<Ventanilla>(other.ventanillas->getSize());
+    colaRegular = new LinkedQueue<Tiquete*>();       // Nueva memoria para iniciar los punteros
+    colaPrioritaria = new LinkedQueue<Tiquete*>();
+    ventanillas = new ArrayList<Ventanilla*>(other.ventanillas->getSize());
     tiemposEspera = new LinkedList<double>();
 
     // Se copian los datos de las estructuras de datos (listas y colas)
@@ -73,20 +90,19 @@ Ventana::Ventana(const Ventana &other) {
 void Ventana::operator=(const Ventana &other){
     // lo mismo que el constructor de copia pero pasando el destructor antes
     this->~Ventana();
-    List<Ventanilla> *ventanillasCopia = other.ventanillas; 
-    List<Tiquete> *regularCopia = other.colaRegular->toList();
-    List<Tiquete> *prioritariaCopia = other.colaRegular->toList();
+    List<Ventanilla*> *ventanillasCopia = other.ventanillas; 
+    List<Tiquete*> *regularCopia = other.colaRegular->toList();
+    List<Tiquete*> *prioritariaCopia = other.colaRegular->toList();
     List<double> *tiemposCopia = other.tiemposEspera;
 
     this->tiquetesDispensados = other.tiquetesDispensados;
     this->codigo = other.codigo;
     this->descripcion = other.descripcion;
-    this->cantidadVentanillas = other.cantidadVentanillas;
     this->totalAtendidos = other.totalAtendidos;
 
-    colaRegular = new LinkedQueue<Tiquete>();
-    colaPrioritaria = new LinkedQueue<Tiquete>();
-    ventanillas = new ArrayList<Ventanilla>(other.ventanillas->getSize());
+    colaRegular = new LinkedQueue<Tiquete*>();
+    colaPrioritaria = new LinkedQueue<Tiquete*>();
+    ventanillas = new ArrayList<Ventanilla*>(other.ventanillas->getSize());
     tiemposEspera = new LinkedList<double>();
 
     for(ventanillasCopia->goToStart();!ventanillasCopia->atEnd();ventanillasCopia->next()) {
@@ -114,17 +130,17 @@ string Ventana::getDescripcion() {
 }
 
 //get del puntero de la lista de ventanillas
-List<Ventanilla> *Ventana::getVentanillas() {
+List<Ventanilla*> *Ventana::getVentanillas() {
     return ventanillas;
 }
 
 //get del puntero de la cola regular
-Queue<Tiquete> *Ventana::getColaRegular() {
+Queue<Tiquete*> *Ventana::getColaRegular() {
     return colaRegular;
 }
 
 //get del puntero de la cola prioritaria
-Queue<Tiquete> *Ventana::getcolaPrioritaria() {
+Queue<Tiquete*> *Ventana::getcolaPrioritaria() {
     return colaPrioritaria;
 }
 
@@ -134,9 +150,25 @@ int Ventana::getTiquetesDispensados() {
 }
 
 //Retorna una ventailla indicada por la posicion dada
-Ventanilla Ventana::getVentanilla(int numero) {
-    ventanillas->goToPos(numero-1);
+Ventanilla *Ventana::getVentanilla(int numero) {
+    ventanillas->goToPos(numero);
     return ventanillas->getElement();
+}
+
+//Metodo que retorna una version string del estado de las ventanillas
+string Ventana::getEstado() {
+    string atendiendo;
+    string retorno = string("\nVentana de codigo: ") + codigo + "\n";
+    for(ventanillas->goToStart(); !ventanillas->atEnd(); ventanillas->next()) {
+        if(ventanillas->getElement()->getAtendiendo() == nullptr) {
+            atendiendo = "N/A";
+        } else {
+            atendiendo = ventanillas->getElement()->getAtendiendo()->getCodigo();
+        }
+        retorno += string("ventanilla numero: ") + to_string(ventanillas->getElement()->getNumero()) +
+        string(" atendiendo ahora mismo: ") + atendiendo + "\n";
+    }
+    return retorno;
 }
 
 //set del codigo de la ventana
@@ -161,14 +193,14 @@ bool Ventana::operator!=(const Ventana &other) {
 
 //get de la cantidad de ventanillas en la ventana
 int Ventana::getCantidadVentanillas(){
-    return cantidadVentanillas;
+    return ventanillas->getSize();
 }
 
 //Metoddo que agrega un tique y automaticamente le asiga un codigo y lo mete a una cola segun el booleano
 void Ventana::agregarTiquete(bool esPrioritaria){
     string texto = codigo;
-    texto += to_string(cantidadVentanillas);
-    Tiquete nuevo = Tiquete(texto);
+    texto += to_string(tiquetesDispensados + 1);
+    Tiquete *nuevo = new Tiquete(texto);
     if(esPrioritaria){
         colaPrioritaria->enqueue(nuevo);
     }else{
@@ -178,38 +210,46 @@ void Ventana::agregarTiquete(bool esPrioritaria){
 }
 
 //Metodo que calcula el tiempo de espera del tiquete de entrada
-void Ventana::agregarTiempoEspera(Tiquete tiquete) {
-    time_t tiempoCreacion = tiquete.getTiempoCreacion(); // se obtiene el tiempo de creacion
+void Ventana::agregarTiempoEspera(Tiquete *tiquete) {
+    time_t tiempoCreacion = tiquete->getTiempoCreacion(); // se obtiene el tiempo de creacion
     time_t tiempoActual;                                 // y el tiempo actual
     time(&tiempoActual);
     double tiempoEspera = difftime(tiempoActual,tiempoCreacion); // Se saca la diferencia entre las dos y
     tiemposEspera->append(tiempoEspera);                         // con ello se obtiene lo que se tardo en atender
 }
 
+// Metodo para borrar el tiquete anterior de una ventanilla
+void Ventana::borrarTiqueteAnterior(Ventanilla *ventanilla) {
+    Tiquete *temp;
+    temp = ventanilla->getAtendiendo();
+    delete temp;
+    ventanilla->setAtendiendo(nullptr);
+}
+
 //Metodo que atiende o hace dequeue a un tiquete si cumple los requisitos
 string Ventana::atender(int codigoVentanilla){
-    for(ventanillas->goToStart(); !ventanillas->atEnd(); ventanillas->next()){
-        if(codigoVentanilla==ventanillas->getElement().getNumero()){
-            Tiquete temp;
-            if(!colaPrioritaria->isEmpty()){
-                temp = colaPrioritaria->dequeue();
-                ventanillas->getElement().setAtendiendo(temp);
-                agregarTiempoEspera(temp);
-                totalAtendidos+=1;
-                return "Se atendio exitosamente";
-            }
-            if(!colaRegular->isEmpty()){
-                temp = colaRegular->dequeue();
-                ventanillas->getElement().setAtendiendo(temp);
-                agregarTiempoEspera(temp);
-                totalAtendidos +=1;
-                return "Se atendio exitosamente";
-            }
-            return "Las filas estan vacias";
-
-        }
+    if(codigoVentanilla >= ventanillas->getSize() || 0 > codigoVentanilla)
+        return "No existe esa ventanilla.";
+    
+    Tiquete *temp;
+    Ventanilla *ventanilla = getVentanilla(codigoVentanilla);
+    if(!colaPrioritaria->isEmpty()){
+        temp = colaPrioritaria->dequeue();
+        borrarTiqueteAnterior(ventanilla);
+        ventanilla->setAtendiendo(temp);
+        agregarTiempoEspera(temp);
+        totalAtendidos+=1;
+        return "Se atendio exitosamente" + getEstado();
     }
-    return "No existe esa ventanilla.";
+    if(!colaRegular->isEmpty()){
+        temp = colaRegular->dequeue();
+        borrarTiqueteAnterior(ventanilla);
+        ventanilla->setAtendiendo(temp);
+        agregarTiempoEspera(temp);
+        totalAtendidos +=1;
+        return "Se atendio exitosamente" + getEstado();
+    }
+    return "Las filas estan vacias";
 }
 
 //get de la cantidad total de atendidos
