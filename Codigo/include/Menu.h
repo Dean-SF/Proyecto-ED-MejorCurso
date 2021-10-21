@@ -200,6 +200,11 @@ class Menu{
             nombre = obtenerString();
             cout<<"Digite la cantidad de ventanillas para la ventana: ";
             cantidad = obtenerInt();
+            if(cantidad <= 0) {
+                cout<<"La ventana no se agrego. \nCantidad invalidad de ventanillas."<<endl;
+                return;
+            }
+                
             bool retorno = controlador.agregarVentana(codigo,nombre,cantidad);
             cout<<endl;
             if(retorno){
