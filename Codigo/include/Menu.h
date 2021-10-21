@@ -319,9 +319,10 @@ class Menu{
             codigo = obtenerString();
             cout<<"Digite la nueva posicion del servicio: ";
             pos = obtenerInt();
+            pos--;
             cout<<endl;
-            if(controlador.getCantidadServicios() <= pos) {
-                cout<<"No existen tantas posiciones."<<endl;
+            if(controlador.getCantidadServicios() <= pos || 0 > pos) {
+                cout<<"No existe esa posicion."<<endl;
                 return;
             }
             bool retorno = controlador.moverServicio(codigo,pos);
