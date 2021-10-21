@@ -19,6 +19,8 @@ Tiquete *Ventanilla::getAtendiendo() {
 
 //set del puntero de atendiendo
 void Ventanilla::setAtendiendo(Tiquete *atendiendo1) {
+    if(atendiendo1 != nullptr)
+        atendidos++;
     this->atendiendo = atendiendo1;
 }
 
