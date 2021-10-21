@@ -18,8 +18,8 @@ Tiquete *Ventanilla::getAtendiendo() {
 }
 
 //set del puntero de atendiendo
-void Ventanilla::setAtendiendo(Tiquete *atentiendo) {
-    this->atendiendo = atendiendo;
+void Ventanilla::setAtendiendo(Tiquete *atendiendo1) {
+    this->atendiendo = atendiendo1;
 }
 
 //get del numero de la ventanilla

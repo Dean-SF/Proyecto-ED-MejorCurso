@@ -28,11 +28,11 @@ class Ventana {
         string descripcion;
         Queue<Tiquete*> *colaRegular;
         Queue<Tiquete*> *colaPrioritaria;
-        List<Ventanilla> *ventanillas;
+        List<Ventanilla*> *ventanillas;
         List<double> *tiemposEspera;
         void agregarTiempoEspera(Tiquete *tiquete);
-        void clearTiquetes();
-        void borrarTiqueteAnterior();
+        void clearPunteros();
+        void borrarTiqueteAnterior(Ventanilla *ventanilla);
     public:
         Ventana(string codigo, string descripcion, int cantidad);
         Ventana(const Ventana& other);
@@ -41,11 +41,11 @@ class Ventana {
         void operator=(const Ventana& other);
         string getCodigo();
         string getDescripcion();
-        List<Ventanilla> *getVentanillas();
+        List<Ventanilla*> *getVentanillas();
         Queue<Tiquete*> *getColaRegular();
         Queue<Tiquete*> *getcolaPrioritaria();
         int getTiquetesDispensados();
-        Ventanilla getVentanilla(int numero);
+        Ventanilla *getVentanilla(int numero);
         string getEstado();
         void setCodigo(string codigo);
         void setDescripcion(string descripcion);
