@@ -24,14 +24,8 @@ class Tiquete{
         string getCodigo();
         void setCodigo(string codigo);
         time_t getTiempoCreacion();
-
-        bool operator!=(const Tiquete& other){
-            return this->codigo != other.codigo;
-        }
-
-        bool operator==(const Tiquete& other){
-            return this->codigo == other.codigo;
-        }
+        bool operator!=(const Tiquete& other);
+        bool operator==(const Tiquete& other);
 
 };
 

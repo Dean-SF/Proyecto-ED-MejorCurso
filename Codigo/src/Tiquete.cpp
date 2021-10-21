@@ -25,6 +25,14 @@ void Tiquete::operator=(const Tiquete &other) {
     this->tiempo_creacion = other.tiempo_creacion;
 }
 
+// Sobreescritura de los operadores de igual y no igual
+bool Tiquete::operator!=(const Tiquete& other){
+    return this->codigo != other.codigo;
+}
+bool Tiquete::operator==(const Tiquete& other){
+    return this->codigo == other.codigo;
+}
+
 // Setters y getters:
 // get del codigo
 string Tiquete::getCodigo() {
@@ -40,3 +48,4 @@ void Tiquete::setCodigo(string codigo) {
 time_t Tiquete::getTiempoCreacion() {
     return tiempo_creacion;
 }
+
