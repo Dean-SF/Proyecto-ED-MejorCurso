@@ -162,7 +162,6 @@ int Controlador::eliminarVentana(string codigo){
     }
     return 0;
 }
-
 /*
 Metodo que agrega un servicio y retorna un booleano para ocnfirmar, verifica que no este
 repetido, lo crea y lo agrega a la lista.
@@ -232,6 +231,16 @@ bool Controlador::moverServicio(string id, int pos){
         }
     }
     return false;
+}
+
+void Controlador::printServicios(){
+    Servicios actual;
+    cout << "[";
+    for(servicios->goToStart(); !servicios->atEnd(); servicios->next()){
+        actual = servicios->getElement();
+        cout << " " << actual.getId() + "," + actual.getNombre();
+    }
+    cout << " ]";
 }
 
 /*

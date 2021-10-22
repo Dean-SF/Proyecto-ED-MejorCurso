@@ -42,6 +42,7 @@ class Controlador{
         string dispensadosServicio();
         string dispensadosPreferenciales();
         string mostrarServicios();
+        void printServicios();
 
 };
 

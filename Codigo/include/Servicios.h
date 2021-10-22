@@ -35,21 +35,8 @@ class Servicios {
         void agregarTiquete(bool tipo);
         int getCantidadDispensada();
         string getDescripcion();
-
-        /*
-        Sobregarga del operador de comparacion diferente
-        */
-        bool operator!=(const Servicios& other){
-            return this->id != other.id;
-        }
-
-        /*
-        Sobregarga del operador de comparacion igual
-        */
-        bool operator==(const Servicios& other){
-            return this->id == other.id;
-        }
-
+        bool operator==(const Servicios& other);
+        bool operator!=(const Servicios& other);
 };
 
 #endif // SERVICIOS_H

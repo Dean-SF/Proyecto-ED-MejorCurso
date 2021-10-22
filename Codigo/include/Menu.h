@@ -328,6 +328,7 @@ class Menu{
             bool retorno = controlador.moverServicio(codigo,pos);
             if(retorno){
                 cout<<"El servicio se movio correctamente."<<endl;
+                controlador.printServicios();
             }else{
                 cout<<"No se encontro el servicio."<<endl;
             }
