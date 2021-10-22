@@ -81,6 +81,8 @@ string Controlador::estadoColas(){
         }
         texto+="\n ";
     }
+    delete colaNormal;
+    delete colaPrioridad;
     return texto;
 }
 
