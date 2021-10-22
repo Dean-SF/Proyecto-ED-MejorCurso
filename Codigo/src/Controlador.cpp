@@ -256,7 +256,7 @@ string Controlador::dispensadosVentana(){
     Ventana *temp;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp=ventanas->getElement();
-        texto += "Ventanilla "+temp->getCodigo()+", con una cantidad dispensada de: ";
+        texto += "Ventana "+temp->getCodigo()+", con una cantidad dispensada de: ";
         texto+= to_string(temp->getTiquetesDispensados())+". \n";
         total += temp->getTiquetesDispensados();
     }
@@ -271,13 +271,22 @@ string Controlador::atendidosVentana(){
     string texto = "";
     int total = 0;
     Ventana *temp;
+    ArrayList<Ventanilla*> ventanillas;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp=ventanas->getElement();
-        texto += "Ventanilla "+temp->getCodigo()+", con una cantidad atendida de: ";
-        texto+= to_string(temp->getTotalAtendidos())+". \n";
-        total += temp->getTotalAtendidos();
+        texto += "Ventana "+temp->getCodigo()+", con las ventanillas: \n";
+        ventanillas.extend(temp->getVentanillas());
+        for(ventanillas.goToStart(); !ventanillas.atEnd(); ventanillas.next()){
+            texto+= "Ventanilla numero: ";
+            texto+= to_string(ventanillas.getElement()->getNumero());
+            texto+= ", con una cantidad de atendidos de: ";
+            texto+= to_string(ventanillas.getElement()->getAtendidos());
+            texto+= ". \n";
+            total+=ventanillas.getElement()->getAtendidos();
+        }
+        ventanillas.clear();
     }
-    texto += "Para un total de tiquetes atendidos de: "+to_string(total);
+    texto += "Un total de tiquetes atendidos de: "+to_string(total);
     return texto;
 }
 
