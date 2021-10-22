@@ -108,7 +108,7 @@ class Menu{
                 cout<<"Coloque '1' para cliente preferencial o '0' para normal: ";
                 tipo = obtenerInt();
             } while (tipo != 0 && tipo != 1);
-            
+
             bool retorno = controlador.agregarTiquete(tipo, servicios);
             cout<<endl;
             if(retorno){
@@ -204,7 +204,7 @@ class Menu{
                 cout<<"La ventana no se agrego. \nCantidad invalidad de ventanillas."<<endl;
                 return;
             }
-                
+
             bool retorno = controlador.agregarVentana(codigo,nombre,cantidad);
             cout<<endl;
             if(retorno){
@@ -342,24 +342,29 @@ class Menu{
                 cout<<endl<<"--Menu estadisticas--"<<endl;
                 cout<<"1 -Tiempo promedio de espera."<<endl<<"2 -Tiquetes dispensados por ventanilla."<<endl;
                 cout<<"3 -Tiquetes atendidos por ventanilla."<<endl<<"4 -Tiquetes dispensados por servicio."<<endl;
-                cout<<"5 -Tiquetes preferenciales."<<endl<<"0 -Salir."<<endl;
+                cout<<"5 -Tiquetes preferenciales."<<endl<<"0 -Regresar."<<endl;
                 cout<<endl<<"Digite el numero con la opcion deseada: ";
                 menuNumero = obtenerInt();
                 cout<< endl;
                 switch(menuNumero){
                     case 1:
+                        cout<<"--Tiempo promedio--"<<endl;
                         cout<<controlador.tiempoPromedio()<<endl;
                         break;
                     case 2:
+                        cout<<"--Dispensados ventana--"<<endl;
                         cout<<controlador.dispensadosVentana()<<endl;
                         break;
                     case 3:
+                        cout<<"--Atendidos ventanilla--"<<endl;
                         cout<<controlador.atendidosVentana()<<endl;
                         break;
                     case 4:
+                        cout<<"--Dispensados servicios--"<<endl;
                         cout<<controlador.dispensadosServicio()<<endl;
                         break;
                     case 5:
+                        cout<<"--Total dispensados preferenciales--"<<endl;
                         cout<<controlador.dispensadosPreferenciales()<<endl;
                         break;
                     case 0:
