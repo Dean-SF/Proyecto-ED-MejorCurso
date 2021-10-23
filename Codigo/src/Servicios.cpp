@@ -50,14 +50,14 @@ void Servicios::operator=(const Servicios &other) {
 }
 
 /*
-Sobregarga del operador de comparacion diferente
+Sobrecarga del operador de comparacion diferente
 */
 bool Servicios::operator!=(const Servicios& other){
     return this->id != other.id;
 }
 
 /*
-Sobregarga del operador de comparacion igual
+Sobrecarga del operador de comparacion igual
 */
 bool Servicios::operator==(const Servicios& other){
     return this->id == other.id;
