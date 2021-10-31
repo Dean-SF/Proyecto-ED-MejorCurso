@@ -51,8 +51,8 @@ la cantidad de ventanillas y sus dos colas respectivas.
 string Controlador::estadoColas(){
     string texto = "--Estado de las colas-- \n";
     Ventana *temp;
-    ArrayList<Tiquete*> *colaNormal;
-    ArrayList<Tiquete*> *colaPrioridad;
+    ArrayList<Tiquete*> *colaNormal = nullptr;
+    ArrayList<Tiquete*> *colaPrioridad = nullptr;
     for(ventanas->goToStart(); !ventanas->atEnd(); ventanas->next()){
         temp = ventanas->getElement();
         texto+="\n --";
